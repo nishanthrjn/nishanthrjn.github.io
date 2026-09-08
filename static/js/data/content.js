@@ -25,7 +25,7 @@ export const PROFILE = {
     { text: 'AGENTIC SYSTEMS' },
     { text: 'C# / .NET', variant: 'y' },
     { text: 'PYTHON', variant: 'y' },
-    { text: 'ANAC 2026 · 4th PLACE', variant: 'g' },
+    { text: 'ANAC 2026 · 4th PLACE', variant: 'y' },
   ],
   techNodes: [
     { icon: 'i-python', label: 'Python<br>Applied AI' },
