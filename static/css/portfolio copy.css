@@ -96,7 +96,7 @@ nav{
 .hc-item .ic{width:14px;height:14px}
 .hc-item:hover{color:var(--white)}
 
-.hero-illust{position:relative;height:430px;display:flex;align-items:center;justify-content:center}
+.hero-illust{position:relative;height:360px;display:flex;align-items:center;justify-content:center}
 .orbit{position:absolute;border-radius:50%;border:1px solid rgba(37,99,235,0.12)}
 .o1{width:190px;height:190px;animation:spin 26s linear infinite}
 .o2{width:270px;height:270px;animation:spin 42s linear infinite reverse;border-style:dashed;border-color:rgba(37,99,235,0.08)}
@@ -104,31 +104,25 @@ nav{
 @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 /* Counter-rotate each tech-node badge at the same rate/duration as .o3 but
    in reverse, so the badge orbits with the ring (position) without ever
-   appearing upside-down (orientation) -- gimbal-style. --tx/--ty (set per
-   .tnN below) place each badge at an equal radius from center, so this one
-   keyframe drives every badge; the keyframe bakes in that offset since an
-   animated `transform` replaces rather than composes with it. */
-@keyframes counter-spin{
-  from{transform:translate(-50%,-50%) translate(var(--tx),var(--ty)) rotate(0deg)}
-  to{transform:translate(-50%,-50%) translate(var(--tx),var(--ty)) rotate(-360deg)}
-}
+   appearing upside-down (orientation) -- gimbal-style. Each keyframe bakes
+   in the node's own static centering transform since an animated
+   `transform` replaces rather than composes with it. */
+@keyframes counter-spin-x{from{transform:translateX(-50%) rotate(0deg)}to{transform:translateX(-50%) rotate(-360deg)}}
+@keyframes counter-spin-y{from{transform:translateY(-50%) rotate(0deg)}to{transform:translateY(-50%) rotate(-360deg)}}
+@keyframes counter-spin{from{transform:rotate(0deg)}to{transform:rotate(-360deg)}}
 .hero-photo{width:150px;height:150px;border-radius:50%;object-fit:cover;object-position:center top;border:2.5px solid rgba(37,99,235,0.5);box-shadow:0 0 50px rgba(37,99,235,0.28);position:relative;z-index:5;animation:glow-breathe 4s ease-in-out infinite}
 @keyframes glow-breathe{0%,100%{box-shadow:0 0 34px rgba(37,99,235,0.28)}50%{box-shadow:0 0 66px rgba(37,99,235,0.5)}}
-/* All 8 badges anchor at .o3's center (top/left:50%) and share one fixed
-   circular size -- equal "planets" -- then --tx/--ty (equal-radius, 45°
-   apart, same 170px radius as .o3 itself so each sits right on the orbit
-   ring) place them around the circle via the counter-spin keyframe above. */
-.t-node{position:absolute;top:50%;left:50%;z-index:4;width:84px;height:84px;box-sizing:border-box;border-radius:50%;background:var(--card2);border:1px solid var(--border-blue);padding:8px;font-size:0.52rem;font-weight:700;text-align:center;line-height:1.3;color:var(--gray);transition:border-color .25s,color .25s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;animation:counter-spin 66s linear infinite}
-.t-node .ic{width:14px;height:14px;flex-shrink:0}
-.t-node:hover{border-color:var(--blue);color:var(--white)}
-.tn1{--tx:0px;--ty:-170px;color:#60a5fa}
-.tn2{--tx:120px;--ty:-120px;color:var(--orange)}
-.tn3{--tx:170px;--ty:0px;color:var(--yellow)}
-.tn4{--tx:120px;--ty:120px;color:var(--blue)}
-.tn5{--tx:0px;--ty:170px;color:#a78bfa}
-.tn6{--tx:-120px;--ty:120px;color:var(--yellow)}
-.tn7{--tx:-170px;--ty:0px;color:var(--green)}
-.tn8{--tx:-120px;--ty:-120px;color:#c084fc}
+.t-node{position:absolute;z-index:4;background:var(--card2);border:1px solid var(--border-blue);border-radius:9px;padding:6px 9px;font-size:0.55rem;font-weight:700;text-align:center;line-height:1.35;color:var(--gray);white-space:nowrap;transition:all .25s;display:flex;align-items:center;gap:5px}
+.t-node .ic{width:12px;height:12px}
+.t-node:hover{border-color:var(--blue);color:var(--white);transform:scale(1.06)}
+.tn1{top:4px;left:50%;transform:translateX(-50%);color:#60a5fa;animation:counter-spin-x 66s linear infinite}
+.tn2{top:46%;right:2px;transform:translateY(-50%);color:var(--yellow);animation:counter-spin-y 66s linear infinite}
+.tn3{bottom:4px;left:50%;transform:translateX(-50%);color:#a78bfa;animation:counter-spin-x 66s linear infinite}
+.tn4{top:46%;left:2px;transform:translateY(-50%);color:var(--green);animation:counter-spin-y 66s linear infinite}
+.tn5{top:20%;right:14%;color:var(--orange);animation:counter-spin 66s linear infinite}
+.tn6{bottom:20%;right:14%;color:var(--blue);animation:counter-spin 66s linear infinite}
+.tn7{bottom:20%;left:14%;color:var(--yellow);animation:counter-spin 66s linear infinite}
+.tn8{top:20%;left:14%;color:#c084fc;animation:counter-spin 66s linear infinite}
 
 /* ═══════════════════ EXPAND / DISCLOSURE ═══════════════════ */
 .expand-toggle{

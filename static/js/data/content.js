@@ -30,7 +30,7 @@ export const PROFILE = {
   techNodes: [
     { icon: 'i-python', label: 'Python<br>Applied AI' },
     { icon: 'i-dotnet', label: 'C# / .NET<br>Established Stack' },
-    { icon: 'i-llm', label: 'LLM<br>Integration' },
+    { icon: 'i-llm', label: 'LLM<br>Orchestration' },
     { icon: 'i-vector', label: 'pgvector<br>FAISS' },
     { icon: 'i-agent', label: 'RAG' },
     { icon: 'i-docker', label: 'Docker / CI/CD<br>AWS exposure' },
