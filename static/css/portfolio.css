@@ -51,7 +51,7 @@ nav{
   background:rgba(5,5,7,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);
 }
 .nav-logo{display:flex;align-items:center;gap:10px;cursor:pointer;background:none;border:none;text-decoration:none}
-.nav-dot{width:7px;height:7px;background:var(--yellow);border-radius:50%;animation:blink 2s ease-in-out infinite}
+.nav-dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:blink 2s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.2}}
 .nav-photo{width:32px;height:32px;border-radius:50%;object-fit:cover;object-position:center top;border:1.5px solid rgba(37,99,235,0.5)}
 .nav-id{display:flex;flex-direction:column;line-height:1.15;text-align:left}
@@ -262,7 +262,7 @@ nav{
 .status-dot{width:6px;height:6px;border-radius:50%;background:#34D399;box-shadow:0 0 6px rgba(52,211,153,0.7);animation:blink 2s ease-in-out infinite}
 .hf-frame{flex:1;width:100%;border:none;background:#000}
 .hf-embed-main{height:760px}
-.hf-embed-side{height:440px}
+.hf-embed-side{height:390px}
 .chat-head-sm{padding:9px 12px}
 .chat-head-sm .chat-head-avatar{width:24px;height:24px}
 .chat-head-sm .chat-head-avatar .ic{width:12px;height:12px}
@@ -365,6 +365,10 @@ nav{
 .side-quick-btn:hover{border-color:var(--border-blue);color:var(--white)}
 .side-quick-btn .ic{width:16px;height:16px}
 .side-contact-jump{display:block;text-align:center;font-size:0.66rem;font-weight:700;background:var(--blue);color:#fff;text-decoration:none;padding:10px;border-radius:9px;margin-top:6px}
+/* Bottom bar under the cramped 350px iframe embed -- the Space's own UI
+   (input, examples, etc.) is hard to use at that width, so this gives a
+   one-tap way out to the full-size chat section instead. */
+.side-chat-jump{display:block;text-align:center;font-size:0.66rem;font-weight:700;background:var(--blue);color:#fff;text-decoration:none;padding:10px;border-radius:9px;margin-top:10px}
 
 /* ═══════════════════ FOOTER ═══════════════════ */
 footer{padding:26px 32px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:0.68rem;color:var(--gray);margin-top:60px}
