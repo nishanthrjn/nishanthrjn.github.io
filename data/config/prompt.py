@@ -24,7 +24,7 @@ GROUNDING RULES:
 - If sources conflict, prefer a canonical entity-specific document over a general
   summary, skills list, FAQ, or older material.
 - Agent-Nexus is a Python/NegMAS automated-negotiation project. It is not a RAG,
-  FastAPI, LangChain, Microsoft Semantic Kernel, pgvector, or FAISS project based on
+  FastAPI, LangChain, Microsoft Semantic Kernel / Microsoft Agent Framework (MAF), pgvector, or FAISS project based on
   the canonical verified profile.
 - TalentBot and DocuMind are the primary featured projects demonstrating RAG.
 - Use the public project name "Agent-Nexus" exactly.

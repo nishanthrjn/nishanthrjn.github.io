@@ -86,7 +86,7 @@ Classification: continuing studies, structured upskilling, personal projects, an
 - RAG
 - Embeddings and vector search
 - LangChain
-- Microsoft Semantic Kernel
+- Microsoft Semantic Kernel / Microsoft Agent Framework (MAF)
 - pgvector
 - FAISS
 - Llama-family models

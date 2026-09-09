@@ -23,7 +23,7 @@
     ],
     "DocuMind": [
       "C#/.NET 10",
-      "Microsoft Semantic Kernel",
+      "Microsoft Semantic Kernel / Microsoft Agent Framework (MAF)",
       "pgvector",
       "local Llama 3.2",
       "RAG"

@@ -16,7 +16,7 @@
 
 Software Engineer with more than a decade of professional experience across backend systems, desktop applications, CAD-integrated engineering software, SQL-backed workflows, enterprise applications, application integration, modernization, debugging, and production support. Most commercial experience is in C#/.NET and SQL, with additional professional exposure to Angular/TypeScript, Blazor, RPA delivery, Docker/CI/CD, AWS/Linux delivery environments, and technical coordination.
 
-More recently, I have been extending this software-engineering foundation into Python and applied AI through structured study, personal projects, and competition work. Current hands-on areas include Python, FastAPI, RAG, LLM integration, Microsoft Semantic Kernel, LangChain, pgvector, FAISS, local/open-source LLM workflows, prompt engineering, and agentic systems.
+More recently, I have been extending this software-engineering foundation into Python and applied AI through structured study, personal projects, and competition work. Current hands-on areas include Python, FastAPI, RAG, LLM integration, Microsoft Semantic Kernel / Microsoft Agent Framework (MAF), LangChain, pgvector, FAISS, local/open-source LLM workflows, prompt engineering, and agentic systems.
 
 I am not positioning myself as a long-term commercial AI/ML specialist. My value is the combination of established software-engineering experience with deliberate, hands-on development in modern AI application engineering.
 
@@ -24,7 +24,7 @@ I am not positioning myself as a long-term commercial AI/ML specialist. My value
 
 - More than a decade of professional software-development experience across engineering software, healthcare, SaaS, enterprise applications, RPA, backend, desktop, integration, and modernization contexts.
 - Built TalentBot, a Python/FastAPI RAG chatbot using LangChain, FAISS, and Groq/Llama 3.
-- Built DocuMind, a C#/.NET 10 document-intelligence and RAG project using Microsoft Semantic Kernel, pgvector, and local Llama 3.2.
+- Built DocuMind, a C#/.NET 10 document-intelligence and RAG project using Microsoft Semantic Kernel / Microsoft Agent Framework (MAF), pgvector, and local Llama 3.2.
 - Developed Agent-Nexus in Python using NegMAS for the ANAC 2026 automated-negotiation competition; Agent-Nexus placed 4th in the competition.
 - Professional CAD/engineering-software experience includes SOLIDWORKS API, AutoCAD API, WPF/WinForms, geometry validation, EDA/CAD/CAE, CAD/CAM, and legacy modernization.
 - Previous UAE-market delivery experience through FourNxt Technologies, including client engagements for Emaar and DAMAC.
@@ -60,7 +60,7 @@ Current project/academic/competition context:
 - FastAPI
 - Retrieval-Augmented Generation (RAG)
 - LLM Orchestration 
-- Microsoft Semantic Kernel
+- Microsoft Semantic Kernel / Microsoft Agent Framework (MAF)
 - LangChain
 - Embeddings and vector search
 - pgvector
@@ -126,7 +126,7 @@ TalentBot is a RAG chatbot project combining LLM orchestration, vector retrieval
 ### DocuMind
 
 Category: Personal AI/document-intelligence project  
-Stack: C#/.NET 10, Microsoft Semantic Kernel, pgvector, local Llama 3.2
+Stack: C#/.NET 10, Microsoft Semantic Kernel / Microsoft Agent Framework (MAF), pgvector, local Llama 3.2
 
 DocuMind is a document-intelligence and RAG project exploring document ingestion, vector retrieval, LLM integration, and grounded question answering inside a modern .NET application architecture. It connects my established C#/.NET background with newer LLM/RAG engineering patterns.
 
@@ -288,11 +288,11 @@ No. I am an experienced software engineer transitioning hands-on into applied AI
 
 ### What AI projects have you built?
 
-My three preferred featured projects are TalentBot, DocuMind, and Agent-Nexus. TalentBot is a Python/FastAPI RAG chatbot, DocuMind is a .NET/Semantic Kernel document-RAG project, and Agent-Nexus is a Python/NegMAS automated-negotiation agent that placed 4th in ANAC 2026.
+My three preferred featured projects are TalentBot, DocuMind, and Agent-Nexus. TalentBot is a Python/FastAPI RAG chatbot, DocuMind is a .NET/Semantic Kernel / Microsoft Agent Framework (MAF) document-RAG project, and Agent-Nexus is a Python/NegMAS automated-negotiation agent that placed 4th in ANAC 2026.
 
-### What is your experience with Microsoft Semantic Kernel?
+### What is your experience with Microsoft Semantic Kernel / Microsoft Agent Framework (MAF)?
 
-I have used Microsoft Semantic Kernel in recent personal .NET AI work, particularly DocuMind, to explore LLM orchestration inside a C#/.NET application architecture. This is project experience, not long-term commercial Semantic Kernel experience.
+I have used Microsoft Semantic Kernel / Microsoft Agent Framework (MAF) in recent personal .NET AI work, particularly DocuMind, to explore LLM orchestration inside a C#/.NET application architecture. This is project experience, not long-term commercial Semantic Kernel / Microsoft Agent Framework (MAF) experience.
 
 ### What is your Python experience?
 

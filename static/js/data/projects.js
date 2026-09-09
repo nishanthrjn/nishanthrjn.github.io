@@ -13,7 +13,7 @@ export const PROJECTS = [
     ],
     icon: 'i-agent',
     color: '#60a5fa',
-    bg: 'rgba(59,130,246,0.14)',
+    bg: 'rgba(37,99,235,0.14)',
     title: 'TalentBot',
     sub: 'Applied AI · RAG · Python / FastAPI',
     badge: '<span class="pm-badge">FEATURED</span>',
@@ -71,17 +71,17 @@ export const PROJECTS = [
   {
     id: 'documind', enabled: true, featured: true, historical: false, category: 'ai',
     numLabel: 'AI · DOCUMENT INTELLIGENCE',
-    featDesc: 'C#/.NET 10 document-intelligence and RAG project using Semantic Kernel and pgvector.',
+    featDesc: 'C#/.NET 10 document-intelligence and RAG project using Semantic Kernel / Microsoft Agent Framework (MAF) and pgvector.',
     cardDesc: 'Document ingestion, vector retrieval, LLM integration, and grounded question answering in .NET.',
     tags: [
       { text: 'C# .NET 10', variant: 'b' },
-      { text: 'Semantic Kernel', variant: 'b' },
+      { text: 'Semantic Kernel / Microsoft Agent Framework (MAF)', variant: 'b' },
       { text: 'pgvector' },
       { text: 'Llama 3.2' }
     ],
     icon: 'i-doc',
-    color: '#38bdf8',
-    bg: 'rgba(56,189,248,0.14)',
+    color: '#60a5fa',
+    bg: 'rgba(37,99,235,0.14)',
     title: 'DocuMind',
     sub: 'Applied AI · Document Intelligence · C# / .NET 10',
     badge: '<span class="pm-badge">FEATURED</span>',
@@ -116,7 +116,7 @@ export const PROJECTS = [
         <div class="pm-section-title">What it demonstrates</div>
         <ul class="pm-list">
           <li>C#/.NET 10 AI application development</li>
-          <li>Microsoft Semantic Kernel project experience</li>
+          <li>Microsoft Semantic Kernel / Microsoft Agent Framework (MAF) project experience</li>
           <li>PostgreSQL/pgvector vector retrieval</li>
           <li>Local Llama 3.2 integration</li>
           <li>Document ingestion and grounded question answering</li>
@@ -127,7 +127,7 @@ export const PROJECTS = [
         <div class="pm-section-title">Tech Stack</div>
         <div class="pm-stack">
           <span class="pm-tag">C# / .NET 10</span>
-          <span class="pm-tag">Semantic Kernel</span>
+          <span class="pm-tag">Semantic Kernel / Microsoft Agent Framework (MAF)</span>
           <span class="pm-tag">pgvector</span>
           <span class="pm-tag">PostgreSQL</span>
           <span class="pm-tag">Llama 3.2</span>
@@ -147,8 +147,8 @@ export const PROJECTS = [
     cardDesc: 'Not currently displayed in the public portfolio.',
     tags: [],
     icon: 'i-llm',
-    color: '#c084fc',
-    bg: 'rgba(192,132,252,0.14)',
+    color: '#60a5fa',
+    bg: 'rgba(37,99,235,0.14)',
     title: 'NexusAI',
     sub: 'Pending verification',
     badge: '',
@@ -167,11 +167,11 @@ export const PROJECTS = [
       { text: 'Multi-Agent Systems' }
     ],
     icon: 'i-trophy',
-    color: 'var(--yellow)',
-    bg: 'rgba(251,191,36,0.14)',
+    color: '#60a5fa',
+    bg: 'rgba(37,99,235,0.14)',
     title: 'Agent-Nexus',
     sub: 'Agentic Systems · Automated Negotiation · Python / NegMAS',
-    badge: '<span class="pm-badge y">4th PLACE · ANAC 2026</span>',
+    badge: '<span class="pm-badge">4th PLACE · ANAC 2026</span>',
     body: `
       <div class="pm-section">
         <div class="pm-section-title">Overview</div>
@@ -197,7 +197,7 @@ export const PROJECTS = [
         <div class="pm-section-title">Important distinction</div>
         <p class="pm-desc">
           Agent-Nexus is not a RAG project and is not presented as using LangChain,
-          FastAPI, Microsoft Semantic Kernel, pgvector, or FAISS.
+          FastAPI, Microsoft Semantic Kernel / Microsoft Agent Framework (MAF), pgvector, or FAISS.
         </p>
       </div>
 
@@ -223,7 +223,7 @@ export const PROJECTS = [
     tags: [],
     icon: 'i-bolt',
     color: '#60a5fa',
-    bg: 'rgba(96,165,250,0.14)',
+    bg: 'rgba(37,99,235,0.14)',
     title: 'AutoFlow',
     sub: 'Pending verification',
     badge: '',
@@ -241,8 +241,8 @@ export const PROJECTS = [
     cardDesc: 'Not currently displayed in the public portfolio.',
     tags: [],
     icon: 'i-target',
-    color: '#34d399',
-    bg: 'rgba(52,211,153,0.14)',
+    color: '#60a5fa',
+    bg: 'rgba(37,99,235,0.14)',
     title: 'JobRadar',
     sub: 'Pending verification',
     badge: '',
@@ -261,11 +261,11 @@ export const PROJECTS = [
       { text: 'TypeScript' }
     ],
     icon: 'i-hospital',
-    color: '#f87171',
-    bg: 'rgba(248,113,113,0.14)',
+    color: '#60a5fa',
+    bg: 'rgba(37,99,235,0.14)',
     title: 'Greenway Health — EHR Application',
     sub: 'Enterprise · Healthcare · US Market',
-    badge: '<span class="pm-badge g">PRINCIPAL SOFTWARE ENGINEER</span>',
+    badge: '<span class="pm-badge">PRINCIPAL SOFTWARE ENGINEER</span>',
     body: `
       <div class="pm-section">
         <div class="pm-section-title">Overview</div>
@@ -313,8 +313,8 @@ export const PROJECTS = [
       { text: 'Docker' }
     ],
     icon: 'i-cloud',
-    color: '#93c5fd',
-    bg: 'rgba(147,197,253,0.14)',
+    color: '#60a5fa',
+    bg: 'rgba(37,99,235,0.14)',
     title: 'Grandcivitas — Smartdale',
     sub: 'Enterprise · Multi-Tenant SaaS · C# / .NET Core',
     badge: '<span class="pm-badge">TECHNICAL PROJECT MANAGER</span>',
@@ -369,7 +369,7 @@ export const PROJECTS = [
     ],
     icon: 'i-bolt',
     color: '#60a5fa',
-    bg: 'rgba(96,165,250,0.14)',
+    bg: 'rgba(37,99,235,0.14)',
     title: 'FourNxt — UAE RPA Delivery',
     sub: 'Automation · RPA · UAE Market',
     badge: '<span class="pm-badge">PROJECT MANAGER, RPA</span>',
@@ -427,8 +427,8 @@ export const PROJECTS = [
       { text: 'SQL' }
     ],
     icon: 'i-hotel',
-    color: 'var(--orange)',
-    bg: 'rgba(251,146,60,0.14)',
+    color: '#60a5fa',
+    bg: 'rgba(37,99,235,0.14)',
     title: 'Seven Seas Enterprise Applications',
     sub: 'Enterprise · ERP / POS / Finance · C# / ASP.NET',
     badge: '<span class="pm-badge">PROJECT TEAM LEAD</span>',
@@ -477,8 +477,8 @@ export const PROJECTS = [
       { text: 'SOLIDWORKS API' }
     ],
     icon: 'i-cube',
-    color: '#f87171',
-    bg: 'rgba(248,113,113,0.14)',
+    color: '#60a5fa',
+    bg: 'rgba(37,99,235,0.14)',
     title: 'Kauschke SOLIDWORKS Add-in',
     sub: 'CAD · Desktop Engineering · C# / .NET',
     badge: '<span class="pm-badge">SOFTWARE ENGINEER</span>',
@@ -526,8 +526,8 @@ export const PROJECTS = [
       { text: 'SQL' }
     ],
     icon: 'i-cad',
-    color: 'var(--orange)',
-    bg: 'rgba(251,146,60,0.14)',
+    color: '#60a5fa',
+    bg: 'rgba(37,99,235,0.14)',
     title: 'IDSi — AutoPlan / PlanPermit / AgniPermit',
     sub: 'CAD · Permit Workflows · C# / AutoCAD API',
     badge: '<span class="pm-badge">SOFTWARE ENGINEER L3 → ASSOC. TECHNICAL PM</span>',
@@ -581,8 +581,8 @@ export const PROJECTS = [
       { text: 'TCP/IP' }
     ],
     icon: 'i-microscope',
-    color: '#a78bfa',
-    bg: 'rgba(167,139,250,0.14)',
+    color: '#60a5fa',
+    bg: 'rgba(37,99,235,0.14)',
     title: 'Visionics — EDWinXP',
     sub: 'Desktop Engineering · EDA/CAD/CAE · C++',
     badge: '<span class="pm-badge">SOFTWARE ENGINEER</span>',
@@ -632,8 +632,8 @@ export const PROJECTS = [
       { text: 'Linux' }
     ],
     icon: 'i-cube',
-    color: '#a78bfa',
-    bg: 'rgba(167,139,250,0.14)',
+    color: '#60a5fa',
+    bg: 'rgba(37,99,235,0.14)',
     title: 'iSET — CADXpert / CIM Systems',
     sub: 'Engineering Software · CAD/CAM · C/C++ / Qt / OpenGL',
     badge: '<span class="pm-badge">TRAINEE, R&D</span>',

@@ -101,7 +101,7 @@ unless a specific experience document states otherwise.
 - LLM Orchestration 
 - Retrieval-Augmented Generation (RAG)
 - LangChain
-- Microsoft Semantic Kernel
+- Microsoft Semantic Kernel / Microsoft Agent Framework (MAF)
 - prompt engineering
 - embeddings
 - vector search

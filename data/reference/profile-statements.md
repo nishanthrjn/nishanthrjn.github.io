@@ -40,7 +40,7 @@ Updated: 22 August 2026
 
 ### Website About / balanced
 
-> Software engineer with more than a decade of professional experience across backend systems, desktop applications, CAD-integrated engineering software, SQL-backed workflows, enterprise applications, integration, modernization, debugging, and production support. Most commercial experience is in C#/.NET and SQL. More recently, I have been extending this foundation into Python and applied AI through structured study, personal projects, and competition work involving FastAPI, RAG, LLM integration, vector retrieval, Microsoft Semantic Kernel, LangChain, and agentic systems.
+> Software engineer with more than a decade of professional experience across backend systems, desktop applications, CAD-integrated engineering software, SQL-backed workflows, enterprise applications, integration, modernization, debugging, and production support. Most commercial experience is in C#/.NET and SQL. More recently, I have been extending this foundation into Python and applied AI through structured study, personal projects, and competition work involving FastAPI, RAG, LLM integration, vector retrieval, Microsoft Semantic Kernel / Microsoft Agent Framework (MAF), LangChain, and agentic systems.
 
 ### Short balanced
 
@@ -48,7 +48,7 @@ Updated: 22 August 2026
 
 ### Python / Applied AI
 
-> Software engineer transitioning into Python-based applied AI application engineering, combining recent hands-on work with FastAPI, RAG, LLM integration, LangChain, Microsoft Semantic Kernel, vector search, and agentic systems with an established background in backend development, APIs, databases, integration, testing, and production software.
+> Software engineer transitioning into Python-based applied AI application engineering, combining recent hands-on work with FastAPI, RAG, LLM integration, LangChain, Microsoft Semantic Kernel / Microsoft Agent Framework (MAF), vector search, and agentic systems with an established background in backend development, APIs, databases, integration, testing, and production software.
 
 ### Python backend
 
@@ -124,7 +124,7 @@ Boundary: do not imply current UAE work authorization unless separately verified
 
 ### Python / Applied AI
 
-> Erfahrener Softwareentwickler im Übergang zu Python-basierten Applied-AI-Anwendungen. Aktuelle praktische Arbeit mit FastAPI, RAG, LLM-Integration, LangChain, Microsoft Semantic Kernel, Vektorsuche und agentischen Systemen ergänzt eine langjährige Grundlage in Backend-Entwicklung, APIs, Datenbanken, Integration, Testing und produktiver Software.
+> Erfahrener Softwareentwickler im Übergang zu Python-basierten Applied-AI-Anwendungen. Aktuelle praktische Arbeit mit FastAPI, RAG, LLM-Integration, LangChain, Microsoft Semantic Kernel / Microsoft Agent Framework (MAF), Vektorsuche und agentischen Systemen ergänzt eine langjährige Grundlage in Backend-Entwicklung, APIs, Datenbanken, Integration, Testing und produktiver Software.
 
 ### C#/.NET
 

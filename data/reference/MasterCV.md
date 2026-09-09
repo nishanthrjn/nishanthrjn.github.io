@@ -27,7 +27,7 @@ Preferred headline:
 
 Professional narrative:
 
-> Software engineer with more than a decade of professional experience across backend systems, desktop applications, CAD-integrated engineering software, SQL-backed workflows, enterprise applications, integration, modernization, debugging, and production support. Most commercial experience is in C#/.NET and SQL. More recently, this foundation has been extended into Python and applied AI through structured study, personal projects, and competition work involving FastAPI, RAG, LLM integration, vector retrieval, Microsoft Semantic Kernel, LangChain, and agentic systems.
+> Software engineer with more than a decade of professional experience across backend systems, desktop applications, CAD-integrated engineering software, SQL-backed workflows, enterprise applications, integration, modernization, debugging, and production support. Most commercial experience is in C#/.NET and SQL. More recently, this foundation has been extended into Python and applied AI through structured study, personal projects, and competition work involving FastAPI, RAG, LLM integration, vector retrieval, Microsoft Semantic Kernel / Microsoft Agent Framework (MAF), LangChain, and agentic systems.
 
 Positioning boundary:
 
@@ -67,7 +67,7 @@ Project/academic/competition context:
 
 - Python
 - FastAPI
-- Microsoft Semantic Kernel
+- Microsoft Semantic Kernel / Microsoft Agent Framework (MAF)
 - LangChain
 - RAG
 - LLM integration
@@ -258,7 +258,7 @@ Python, FastAPI, LangChain, FAISS, Groq/Llama 3
 
 ### DocuMind
 
-C#/.NET 10, Microsoft Semantic Kernel, pgvector, local Llama 3.2
+C#/.NET 10, Microsoft Semantic Kernel / Microsoft Agent Framework (MAF), pgvector, local Llama 3.2
 
 > Document-intelligence and RAG project exploring document ingestion, vector retrieval, LLM integration, and grounded question answering inside a modern .NET application architecture.
 

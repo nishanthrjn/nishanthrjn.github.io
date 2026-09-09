@@ -111,7 +111,7 @@ Classification: current personal-project, academic, competition, and limited pro
 - LLM Orchestration 
 - Retrieval-Augmented Generation (RAG)
 - LangChain
-- Microsoft Semantic Kernel
+- Microsoft Semantic Kernel / Microsoft Agent Framework (MAF)
 - Prompt engineering
 - Embeddings
 - Vector search

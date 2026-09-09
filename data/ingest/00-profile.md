@@ -33,7 +33,7 @@ software-engineering foundation into Python and applied AI through structured st
 personal projects, competition work, and limited automation/support work.
 
 Current hands-on AI/application areas include Python, FastAPI, RAG, LLM integration,
-vector retrieval, LangChain, Microsoft Semantic Kernel, pgvector, FAISS, prompt engineering,
+vector retrieval, LangChain, Microsoft Semantic Kernel / Microsoft Agent Framework (MAF), pgvector, FAISS, prompt engineering,
 and agentic systems.
 
 Accuracy boundary:

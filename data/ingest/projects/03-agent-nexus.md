@@ -1,7 +1,7 @@
 ENTITY_TYPE: project
 ENTITY_NAME: Agent-Nexus
 CAPABILITY_TAGS: Python, NegMAS, automated negotiation, multi-agent systems
-EXCLUDED_CAPABILITY_TAGS: RAG, FastAPI, LangChain, Microsoft Semantic Kernel, pgvector, FAISS
+EXCLUDED_CAPABILITY_TAGS: RAG, FastAPI, LangChain, Microsoft Semantic Kernel / Microsoft Agent Framework (MAF), pgvector, FAISS
 SOURCE_PRIORITY: canonical
 
 # Agent-Nexus
@@ -35,7 +35,7 @@ Critical attribution rules:
 - Agent-Nexus is NOT a RAG project.
 - Agent-Nexus does NOT use FastAPI as a documented project stack.
 - Agent-Nexus does NOT use LangChain as a documented project stack.
-- Agent-Nexus does NOT use Microsoft Semantic Kernel as a documented project stack.
+- Agent-Nexus does NOT use Microsoft Semantic Kernel / Microsoft Agent Framework (MAF) as a documented project stack.
 - Agent-Nexus does NOT use pgvector as a documented project stack.
 - Agent-Nexus does NOT use FAISS as a documented project stack.
 - Do not call Agent-Nexus an LLM-based agent unless repository evidence explicitly proves it.

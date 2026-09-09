@@ -1,6 +1,6 @@
 ENTITY_TYPE: project
 ENTITY_NAME: DocuMind
-CAPABILITY_TAGS: RAG, C#/.NET 10, Microsoft Semantic Kernel, pgvector, LLM integration
+CAPABILITY_TAGS: RAG, C#/.NET 10, Microsoft Semantic Kernel / Microsoft Agent Framework (MAF), pgvector, LLM integration
 SOURCE_PRIORITY: canonical
 
 # DocuMind
@@ -9,7 +9,7 @@ Category: Personal AI/document-intelligence project.
 
 Stack:
 - C#/.NET 10
-- Microsoft Semantic Kernel
+- Microsoft Semantic Kernel / Microsoft Agent Framework (MAF)
 - pgvector
 - local Llama 3.2
 
@@ -20,7 +20,7 @@ What the project demonstrates:
 - LLM integration
 - grounded question answering
 - AI integration inside a modern C#/.NET application architecture
-- Microsoft Semantic Kernel project experience
+- Microsoft Semantic Kernel / Microsoft Agent Framework (MAF) project experience
 
 Public-safe description:
 DocuMind is a document-intelligence and RAG project exploring document ingestion, vector

@@ -41,7 +41,7 @@ Boundary:
 ## DocuMind
 
 Category: personal AI/document-intelligence project  
-Stack: C#/.NET 10, Microsoft Semantic Kernel, pgvector, local Llama 3.2  
+Stack: C#/.NET 10, Microsoft Semantic Kernel / Microsoft Agent Framework (MAF), pgvector, local Llama 3.2  
 Portfolio priority: high
 
 Public-safe description:
@@ -51,7 +51,7 @@ Public-safe description:
 Supported themes:
 
 - C#/.NET 10 project work
-- Microsoft Semantic Kernel
+- Microsoft Semantic Kernel / Microsoft Agent Framework (MAF)
 - pgvector
 - local Llama integration
 - document ingestion

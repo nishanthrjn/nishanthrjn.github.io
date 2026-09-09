@@ -7,7 +7,7 @@ SOURCE_PRIORITY: canonical
 Q: What projects show Nishanth's RAG experience?
 A: TalentBot and DocuMind are the primary featured projects demonstrating RAG. TalentBot
 uses Python, FastAPI, LangChain, FAISS, and Groq/Llama 3. DocuMind uses C#/.NET 10,
-Microsoft Semantic Kernel, pgvector, and local Llama 3.2. Agent-Nexus is NOT a RAG project;
+Microsoft Semantic Kernel / Microsoft Agent Framework (MAF), pgvector, and local Llama 3.2. Agent-Nexus is NOT a RAG project;
 it is a Python/NegMAS automated-negotiation project.
 
 Q: What is Nishanth's strongest professional background?
@@ -23,13 +23,13 @@ A: He has hands-on Python experience across RPA-support utilities, academic work
 AI/ML coursework, personal backend/AI projects, automation, and competition work. He does
 not present himself as a long-term commercial Python specialist.
 
-Q: What is Nishanth's experience with Microsoft Semantic Kernel?
+Q: What is Nishanth's experience with Microsoft Semantic Kernel / Microsoft Agent Framework (MAF)?
 A: Recent personal .NET AI project experience, particularly DocuMind. This is project
-experience, not long-term commercial Semantic Kernel experience.
+experience, not long-term commercial Semantic Kernel / Microsoft Agent Framework (MAF) experience.
 
 Q: What is Agent-Nexus?
 A: Agent-Nexus is a Python/NegMAS automated-negotiation and strategy project for ANAC 2026.
-It placed 4th in the competition. It is not a RAG, LangChain, FastAPI, Semantic Kernel,
+It placed 4th in the competition. It is not a RAG, LangChain, FastAPI, Semantic Kernel / Microsoft Agent Framework (MAF),
 pgvector, or FAISS project based on the verified canonical profile.
 
 Q: What is Nishanth's cloud experience?
