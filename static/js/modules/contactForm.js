@@ -14,7 +14,7 @@ function clearSuccessFlash(button) {
 function flashSuccess(button) {
   clearSuccessFlash(button);
   button.classList.add('is-sent');
-  successFlashTimer = setTimeout(() => button.classList.remove('is-sent'), 1600);
+  successFlashTimer = setTimeout(() => button.classList.remove('is-sent'), 1850);
 }
 
 function setStatus(form, text, state = '') {

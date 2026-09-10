@@ -5,7 +5,7 @@ import { openModal, closeModal, closeModalOutside, initModalKeyboardDismiss } fr
 import { initRadarChart } from './modules/radarChart.js';
 import { initBookingCalendar } from './modules/bookingCalendar.js?v=20260910-22';
 import { initScrollReveal } from './modules/scrollReveal.js';
-import { handleForm, initContactForm } from './modules/contactForm.js?v=20260910-23';
+import { handleForm, initContactForm } from './modules/contactForm.js?v=20260910-24';
 import { renderProfile } from './modules/renderProfile.js?v=20260910-23';
 import { renderProjects } from './modules/renderProjects.js?v=20260910-16';
 import { CONTACT, PROFILE, TIMELINE, SKILLS } from './data/content.js?v=20260910-18';
