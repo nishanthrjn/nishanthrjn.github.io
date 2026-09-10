@@ -98,7 +98,7 @@ export const SKILLS = {
         { icon: 'i-pencil', bg: 'rgba(37,99,235,0.14)', color: '#60a5fa', label: 'Prompt Engineering' },
 
         { icon: 'i-trophy', bg: 'rgba(37,99,235,0.14)', color: '#60a5fa', label: 'NegMAS' },
-        { icon: 'i-llm', bg: 'rgba(37,99,235,0.14)', color: '#60a5fa', label: 'PyTorch / DL' },
+        { icon: 'i-pytorch', bg: 'rgba(37,99,235,0.14)', color: '#60a5fa', label: 'PyTorch / DL' },
       ]
     },
 
@@ -145,16 +145,16 @@ export const SKILLS = {
   radar: {
     labels: ['LLM/RAG', 'C#/.NET', 'Agentic', 'Vector Search', 'Python', 'DevOps', 'Architecture', 'Delivery'],
     sets: [
-      { values: [80, 55, 65, 75, 70, 55, 70, 60], lineColor: 'rgba(96,165,250,0.9)', fill: 'rgba(37,99,235,0.12)' },
-      { values: [35, 90, 35, 45, 45, 65, 85, 80], lineColor: 'rgba(251,191,36,0.9)', fill: 'rgba(251,191,36,0.08)' },
-      { values: [55, 45, 75, 60, 65, 45, 65, 50], lineColor: 'rgba(196,150,255,0.9)', fill: 'rgba(126,34,206,0.1)' },
+      { values: [80, 55, 65, 75, 70, 55, 70, 60], lineColor: 'rgba(140,169,204,0.9)', fill: 'rgba(140,169,204,0.12)' },
+      { values: [35, 90, 35, 45, 45, 65, 85, 80], lineColor: 'rgba(191,164,125,0.9)', fill: 'rgba(191,164,125,0.08)' },
+      { values: [55, 45, 75, 60, 65, 45, 65, 50], lineColor: 'rgba(153,131,172,0.9)', fill: 'rgba(153,131,172,0.1)' },
     ],
     // Matches the 3 actual radar.sets series 1:1 (this used to list 5
     // categories against 3 series, 2 of which were dead/unmatched).
     legend: [
-      { label: 'Current Applied AI Focus', color: '#2563EB' },
-      { label: 'Established Software Engineering', color: '#FBBF24' },
-      { label: 'Agentic / Experimental Work', color: '#7E22CE' },
+      { label: 'Current Applied AI Focus', color: '#8CA9CC' },
+      { label: 'Established Software Engineering', color: '#BFA47D' },
+      { label: 'Agentic / Experimental Work', color: '#9983AC' },
     ],
   },
 };

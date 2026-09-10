@@ -8,7 +8,17 @@ function setHtml(id, html) {
   if (el) el.innerHTML = html;
 }
 
+const BRAND_ICONS = {
+  'i-python': 'python',
+  'i-dotnet': 'csharp',
+  'i-docker': 'docker',
+  'i-pytorch': 'pytorch',
+};
+
 function iconSvg(icon, className = 'ic') {
+  if (BRAND_ICONS[icon]) {
+    return `<img class="${className} brand-icon" src="/static/icons/${BRAND_ICONS[icon]}.svg" width="32" height="32" alt="">`;
+  }
   return `<svg class="${className}"><use href="#${icon}"/></svg>`;
 }
 
@@ -43,12 +53,7 @@ function renderHero(profile, contact) {
     <a class="hc-item" href="${contact.githubUrl}" target="_blank">${iconSvg('i-github')}GitHub</a>
   `);
 
-  const heroPhoto = document.getElementById('heroPhoto');
-  if (heroPhoto) heroPhoto.src = profile.photo;
 
-  setHtml('heroTechNodes', profile.techNodes
-    .map((node, i) => `<div class="t-node tn${i + 1}">${iconSvg(node.icon)}${node.label}</div>`)
-    .join(''));
 }
 
 function renderAbout(profile, timeline) {

@@ -87,28 +87,21 @@
           <div class="hero-contacts" id="heroContacts"></div>
         </div>
         <div class="hero-illust">
-          <div class="orbit o1"></div><div class="orbit o2"></div>
-          <div class="orbit o3">
-            <!-- Static (not counter-rotated) so it rides along with .o3's
-                 spin exactly like the badges' anchor points do -- the
-                 individual .t-node badges (in #heroTechNodes, rendered by
-                 renderProfile.js) counter-rotate on top of this to stay
-                 upright, independent of these connecting lines. -->
-            <svg class="node-links" viewBox="0 0 340 340" aria-hidden="true">
-              <polygon points="170,0 290,50 340,170 290,290 170,340 50,290 0,170 50,50" class="node-links-ring"/>
-              <line x1="170" y1="0" x2="290" y2="290"/>
-              <line x1="290" y1="50" x2="170" y2="340"/>
-              <line x1="340" y1="170" x2="50" y2="290"/>
-              <line x1="290" y1="290" x2="0" y2="170"/>
-              <line x1="170" y1="340" x2="50" y2="50"/>
-              <line x1="50" y1="290" x2="170" y2="0"/>
-              <line x1="0" y1="170" x2="290" y2="50"/>
-              <line x1="50" y1="50" x2="340" y2="170"/>
-            </svg>
-            <div id="heroTechNodes"></div>
-          </div>
-          <img class="hero-photo" id="heroPhoto" src="/static/photo.jpeg" alt="Nishanth Rajan">
-          <!-- <div id="heroTechNodes"></div> -->
+          <img class="hero-neural-art" src="/static/images/hero-neural.png" width="1254" height="1254" fetchpriority="high" decoding="async" alt="A developer with a laptop beneath a blue and gold brain, connected by an irregular web of neural pathways.">
+          <svg class="hero-neural-links" viewBox="0 0 100 100" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-width=".18">
+              <path d="M14 18 25 25 38 12M85 27 74 22 62 13M10 46 16 42 27 37M89 51 83 46 73 34M16 81 24 73 30 65M83 79 76 72 85 58"/>
+            </g>
+            <g fill="currentColor"><circle cx="25" cy="25" r=".4"/><circle cx="74" cy="22" r=".4"/><circle cx="16" cy="42" r=".4"/><circle cx="83" cy="46" r=".4"/><circle cx="24" cy="73" r=".4"/><circle cx="76" cy="72" r=".4"/></g>
+          </svg>
+          <ul class="hero-tech-logos" aria-label="Technologies">
+            <li class="hero-tech-logo hero-tech-python"><img src="/static/icons/python.svg" width="36" height="36" alt=""><span>Python</span></li>
+            <li class="hero-tech-logo hero-tech-csharp"><img src="/static/icons/csharp.svg" width="36" height="36" alt=""><span>C#</span></li>
+            <li class="hero-tech-logo hero-tech-pytorch"><img src="/static/icons/pytorch.svg" width="32" height="32" alt=""><span>PyTorch</span></li>
+            <li class="hero-tech-logo hero-tech-dotnet"><img src="/static/icons/dot-net.svg" width="36" height="36" alt=""><span>.NET</span></li>
+            <li class="hero-tech-logo hero-tech-docker"><img src="/static/icons/docker.svg" width="36" height="36" alt=""><span>Docker</span></li>
+            <li class="hero-tech-logo hero-tech-postgres"><img src="/static/icons/postgresql.svg" width="32" height="32" alt=""><span>PostgreSQL</span></li>
+          </ul>
         </div>
       </div>
     </div>

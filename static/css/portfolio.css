@@ -1,37 +1,29 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#000000;
-  --card:#11141c;
-  --card2:#0d1018;
-  --blue:#2563EB;
-  --blue3:rgba(37,99,235,0.08);
-  --yellow:#FBBF24;
-  --green:#00FF88;
-  --purple:#7E22CE;
-  --orange:#fb923c;
-  --white:#E8ECF3;
-  --gray:#8B96A8;
-  --border:rgba(255,255,255,0.08);
-  --border-blue:rgba(37,99,235,0.3);
+  /* 60/30/10 describes visual emphasis, not a fixed pixel quota.
+     60: near-black canvas; 30: neutral content surfaces;
+     10: blue actions/focus and gold priority highlights.
+     Green is status-only; purple is chart-only. */
+  --bg:#030405;
+  --card:#191A1D;
+  --card2:#131416;
+  --blue:#8CA9CC;
+  --blue3:rgba(140,169,204,0.08);
+  --yellow:#BFA47D;
+  --green:#8DA994;
+  --purple:#9983AC;
+  --orange:#BFA47D;
+  --white:#D8D7D4;
+  --gray:#A3A3AB;
+  --border:rgba(210,207,201,0.14);
+  --border-blue:rgba(140,169,204,0.3);
   --font:'Inter',sans-serif;
   --mono:'JetBrains Mono',monospace;
   --radius:20px;
 }
 html{scroll-behavior:smooth}
 body{
-  /* Organic neural-network watermark: irregular scattered nodes at
-     varying depth (size/brightness) connected to their nearest
-     neighbors, not a repeating grid tile -- that read as visibly
-     "stitched" wallpaper. background-attachment:fixed means this only
-     ever needs to cover one viewport (not the whole scrollable page),
-     so background-size:cover can scale it uniformly with no repeat and
-     no distortion, regardless of how tall the page's content gets. */
-  background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='900' viewBox='0 0 1600 900'%3E%3Cdefs%3E%3Cfilter id='og' x='-100%25' y='-100%25' width='300%25' height='300%25'%3E%3CfeGaussianBlur stdDeviation='5'/%3E%3C/filter%3E%3C/defs%3E%3Cg stroke='%232563EB' stroke-width='1' fill='none'%3E%3Cline x1='61.4' y1='191.0' x2='130.5' y2='224.7' stroke-opacity='0.136'/%3E%3Cline x1='1157.4' y1='160.5' x2='1214.7' y2='130.4' stroke-opacity='0.106'/%3E%3Cline x1='1443.7' y1='768.6' x2='1389.7' y2='834.4' stroke-opacity='0.075'/%3E%3Cline x1='814.9' y1='98.2' x2='847.4' y2='20.5' stroke-opacity='0.074'/%3E%3Cline x1='1563.7' y1='570.4' x2='1443.7' y2='768.6' stroke-opacity='0.106'/%3E%3Cline x1='680.1' y1='202.1' x2='719.8' y2='382.8' stroke-opacity='0.103'/%3E%3Cline x1='377.3' y1='47.6' x2='363.5' y2='81.1' stroke-opacity='0.112'/%3E%3Cline x1='429.9' y1='522.7' x2='547.4' y2='525.9' stroke-opacity='0.123'/%3E%3Cline x1='847.4' y1='20.5' x2='827.4' y2='124.1' stroke-opacity='0.086'/%3E%3Cline x1='1513.3' y1='309.5' x2='1538.1' y2='345.5' stroke-opacity='0.092'/%3E%3Cline x1='346.8' y1='249.6' x2='437.7' y2='201.4' stroke-opacity='0.172'/%3E%3Cline x1='383.2' y1='106.9' x2='363.5' y2='81.1' stroke-opacity='0.109'/%3E%3Cline x1='130.5' y1='224.7' x2='173.5' y2='366.3' stroke-opacity='0.116'/%3E%3Cline x1='1083.5' y1='481.8' x2='1157.4' y2='599.1' stroke-opacity='0.131'/%3E%3Cline x1='1030.9' y1='543.9' x2='1088.0' y2='744.9' stroke-opacity='0.112'/%3E%3Cline x1='1279.1' y1='647.6' x2='1443.7' y2='768.6' stroke-opacity='0.104'/%3E%3Cline x1='637.2' y1='806.5' x2='727.8' y2='840.3' stroke-opacity='0.137'/%3E%3Cline x1='375.5' y1='268.9' x2='346.8' y2='249.6' stroke-opacity='0.116'/%3E%3Cline x1='375.5' y1='268.9' x2='433.2' y2='232.1' stroke-opacity='0.092'/%3E%3Cline x1='814.9' y1='98.2' x2='778.1' y2='79.5' stroke-opacity='0.103'/%3E%3Cline x1='1317.4' y1='284.5' x2='1364.2' y2='233.8' stroke-opacity='0.066'/%3E%3Cline x1='1030.9' y1='543.9' x2='1157.4' y2='599.1' stroke-opacity='0.125'/%3E%3Cline x1='920.7' y1='625.9' x2='1088.0' y2='744.9' stroke-opacity='0.103'/%3E%3Cline x1='1279.1' y1='647.6' x2='1209.5' y2='483.9' stroke-opacity='0.135'/%3E%3Cline x1='170.9' y1='748.8' x2='50.4' y2='819.0' stroke-opacity='0.146'/%3E%3Cline x1='368.2' y1='653.4' x2='430.9' y2='450.5' stroke-opacity='0.106'/%3E%3Cline x1='346.8' y1='249.6' x2='130.5' y2='224.7' stroke-opacity='0.154'/%3E%3Cline x1='191.1' y1='559.6' x2='173.5' y2='366.3' stroke-opacity='0.124'/%3E%3Cline x1='377.3' y1='47.6' x2='437.7' y2='201.4' stroke-opacity='0.132'/%3E%3Cline x1='1443.7' y1='768.6' x2='1572.4' y2='578.9' stroke-opacity='0.098'/%3E%3Cline x1='1313.9' y1='551.9' x2='1209.5' y2='483.9' stroke-opacity='0.157'/%3E%3Cline x1='375.5' y1='268.9' x2='430.9' y2='450.5' stroke-opacity='0.067'/%3E%3Cline x1='1109.1' y1='312.6' x2='1011.7' y2='333.8' stroke-opacity='0.084'/%3E%3Cline x1='368.2' y1='653.4' x2='191.1' y2='559.6' stroke-opacity='0.145'/%3E%3Cline x1='1538.1' y1='345.5' x2='1573.9' y2='475.0' stroke-opacity='0.149'/%3E%3Cline x1='643.1' y1='208.6' x2='680.1' y2='202.1' stroke-opacity='0.150'/%3E%3Cline x1='692.4' y1='384.3' x2='719.8' y2='382.8' stroke-opacity='0.098'/%3E%3Cline x1='1017.5' y1='41.5' x2='847.4' y2='20.5' stroke-opacity='0.089'/%3E%3Cline x1='1538.1' y1='345.5' x2='1572.4' y2='578.9' stroke-opacity='0.114'/%3E%3Cline x1='1387.1' y1='290.6' x2='1364.2' y2='233.8' stroke-opacity='0.105'/%3E%3Cline x1='1083.5' y1='481.8' x2='1016.8' y2='543.7' stroke-opacity='0.077'/%3E%3Cline x1='778.1' y1='79.5' x2='680.1' y2='202.1' stroke-opacity='0.134'/%3E%3Cline x1='1279.1' y1='647.6' x2='1389.7' y2='834.4' stroke-opacity='0.090'/%3E%3Cline x1='643.1' y1='208.6' x2='692.4' y2='384.3' stroke-opacity='0.145'/%3E%3Cline x1='1573.9' y1='475.0' x2='1572.4' y2='578.9' stroke-opacity='0.142'/%3E%3Cline x1='1214.7' y1='130.4' x2='1158.7' y2='193.0' stroke-opacity='0.101'/%3E%3Cline x1='437.7' y1='201.4' x2='433.2' y2='232.1' stroke-opacity='0.148'/%3E%3Cline x1='375.5' y1='268.9' x2='437.7' y2='201.4' stroke-opacity='0.116'/%3E%3Cline x1='1214.7' y1='130.4' x2='1279.7' y2='183.8' stroke-opacity='0.087'/%3E%3Cline x1='1030.9' y1='543.9' x2='1016.8' y2='543.7' stroke-opacity='0.071'/%3E%3Cline x1='814.9' y1='98.2' x2='827.4' y2='124.1' stroke-opacity='0.068'/%3E%3Cline x1='1411.8' y1='94.8' x2='1282.7' y2='25.6' stroke-opacity='0.130'/%3E%3Cline x1='1030.9' y1='543.9' x2='910.8' y2='426.5' stroke-opacity='0.112'/%3E%3Cline x1='920.7' y1='625.9' x2='1030.9' y2='543.9' stroke-opacity='0.064'/%3E%3Cline x1='170.9' y1='748.8' x2='191.1' y2='559.6' stroke-opacity='0.141'/%3E%3Cline x1='1411.8' y1='94.8' x2='1362.8' y2='29.9' stroke-opacity='0.124'/%3E%3Cline x1='1157.4' y1='160.5' x2='1158.7' y2='193.0' stroke-opacity='0.095'/%3E%3Cline x1='1279.7' y1='183.8' x2='1364.2' y2='233.8' stroke-opacity='0.069'/%3E%3Cline x1='920.7' y1='625.9' x2='1016.8' y2='543.7' stroke-opacity='0.063'/%3E%3Cline x1='1282.7' y1='25.6' x2='1362.8' y2='29.9' stroke-opacity='0.149'/%3E%3Cline x1='1563.7' y1='570.4' x2='1573.9' y2='475.0' stroke-opacity='0.149'/%3E%3Cline x1='368.2' y1='653.4' x2='409.7' y2='814.0' stroke-opacity='0.123'/%3E%3Cline x1='1279.1' y1='647.6' x2='1313.9' y2='551.9' stroke-opacity='0.141'/%3E%3Cline x1='1513.3' y1='309.5' x2='1387.1' y2='290.6' stroke-opacity='0.099'/%3E%3Cline x1='1016.8' y1='543.7' x2='910.8' y2='426.5' stroke-opacity='0.111'/%3E%3Cline x1='429.9' y1='522.7' x2='430.9' y2='450.5' stroke-opacity='0.120'/%3E%3Cline x1='1538.1' y1='345.5' x2='1563.7' y2='570.4' stroke-opacity='0.122'/%3E%3Cline x1='363.5' y1='81.1' x2='354.2' y2='133.8' stroke-opacity='0.152'/%3E%3Cline x1='377.1' y1='798.7' x2='409.7' y2='814.0' stroke-opacity='0.135'/%3E%3Cline x1='191.1' y1='559.6' x2='50.4' y2='819.0' stroke-opacity='0.159'/%3E%3Cline x1='66.5' y1='208.0' x2='130.5' y2='224.7' stroke-opacity='0.126'/%3E%3Cline x1='1030.9' y1='543.9' x2='1083.5' y2='481.8' stroke-opacity='0.078'/%3E%3Cline x1='1279.1' y1='647.6' x2='1157.4' y2='599.1' stroke-opacity='0.149'/%3E%3Cline x1='383.2' y1='106.9' x2='354.2' y2='133.8' stroke-opacity='0.129'/%3E%3Cline x1='429.9' y1='522.7' x2='191.1' y2='559.6' stroke-opacity='0.160'/%3E%3Cline x1='1157.4' y1='160.5' x2='1019.9' y2='115.9' stroke-opacity='0.103'/%3E%3Cline x1='877.7' y1='247.9' x2='827.4' y2='124.1' stroke-opacity='0.121'/%3E%3Cline x1='1313.9' y1='551.9' x2='1157.4' y2='599.1' stroke-opacity='0.170'/%3E%3Cline x1='383.2' y1='106.9' x2='377.3' y2='47.6' stroke-opacity='0.089'/%3E%3Cline x1='1387.1' y1='290.6' x2='1317.4' y2='284.5' stroke-opacity='0.096'/%3E%3Cline x1='547.4' y1='525.9' x2='692.4' y2='384.3' stroke-opacity='0.095'/%3E%3Cline x1='1282.7' y1='25.6' x2='1214.7' y2='130.4' stroke-opacity='0.133'/%3E%3Cline x1='1011.7' y1='333.8' x2='910.8' y2='426.5' stroke-opacity='0.125'/%3E%3Cline x1='643.1' y1='208.6' x2='678.6' y2='74.6' stroke-opacity='0.140'/%3E%3Cline x1='870.1' y1='209.6' x2='814.9' y2='98.2' stroke-opacity='0.091'/%3E%3Cline x1='678.6' y1='74.6' x2='680.1' y2='202.1' stroke-opacity='0.110'/%3E%3Cline x1='1209.5' y1='483.9' x2='1157.4' y2='599.1' stroke-opacity='0.165'/%3E%3Cline x1='437.7' y1='201.4' x2='363.5' y2='81.1' stroke-opacity='0.152'/%3E%3Cline x1='430.9' y1='450.5' x2='547.4' y2='525.9' stroke-opacity='0.077'/%3E%3Cline x1='870.1' y1='209.6' x2='877.7' y2='247.9' stroke-opacity='0.145'/%3E%3Cline x1='66.5' y1='208.0' x2='61.4' y2='191.0' stroke-opacity='0.125'/%3E%3Cline x1='170.9' y1='748.8' x2='377.1' y2='798.7' stroke-opacity='0.145'/%3E%3Cline x1='1317.4' y1='284.5' x2='1279.7' y2='183.8' stroke-opacity='0.060'/%3E%3Cline x1='1157.4' y1='160.5' x2='1279.7' y2='183.8' stroke-opacity='0.081'/%3E%3Cline x1='368.2' y1='653.4' x2='547.4' y2='525.9' stroke-opacity='0.109'/%3E%3Cline x1='1083.5' y1='481.8' x2='1209.5' y2='483.9' stroke-opacity='0.118'/%3E%3Cline x1='1563.7' y1='570.4' x2='1572.4' y2='578.9' stroke-opacity='0.115'/%3E%3Cline x1='377.3' y1='47.6' x2='354.2' y2='133.8' stroke-opacity='0.131'/%3E%3Cline x1='1017.5' y1='41.5' x2='1019.9' y2='115.9' stroke-opacity='0.096'/%3E%3Cline x1='368.2' y1='653.4' x2='429.9' y2='522.7' stroke-opacity='0.152'/%3E%3Cline x1='66.5' y1='208.0' x2='173.5' y2='366.3' stroke-opacity='0.105'/%3E%3Cline x1='847.4' y1='20.5' x2='778.1' y2='79.5' stroke-opacity='0.121'/%3E%3Cline x1='368.2' y1='653.4' x2='377.1' y2='798.7' stroke-opacity='0.150'/%3E%3Cline x1='1109.1' y1='312.6' x2='1158.7' y2='193.0' stroke-opacity='0.080'/%3E%3Cline x1='637.2' y1='806.5' x2='409.7' y2='814.0' stroke-opacity='0.109'/%3E%3Cline x1='346.8' y1='249.6' x2='433.2' y2='232.1' stroke-opacity='0.147'/%3E%3Cline x1='680.1' y1='202.1' x2='692.4' y2='384.3' stroke-opacity='0.115'/%3E%3Cline x1='1158.7' y1='193.0' x2='1279.7' y2='183.8' stroke-opacity='0.077'/%3E%3Cline x1='1017.5' y1='41.5' x2='1157.4' y2='160.5' stroke-opacity='0.093'/%3E%3Cline x1='778.1' y1='79.5' x2='827.4' y2='124.1' stroke-opacity='0.114'/%3E%3Cline x1='1088.0' y1='744.9' x2='1157.4' y2='599.1' stroke-opacity='0.164'/%3E%3Cline x1='870.1' y1='209.6' x2='827.4' y2='124.1' stroke-opacity='0.103'/%3E%3Cline x1='1019.9' y1='115.9' x2='1158.7' y2='193.0' stroke-opacity='0.099'/%3E%3Cline x1='1017.5' y1='41.5' x2='1158.7' y2='193.0' stroke-opacity='0.088'/%3E%3Cline x1='1513.3' y1='309.5' x2='1364.2' y2='233.8' stroke-opacity='0.068'/%3E%3Cline x1='678.6' y1='74.6' x2='778.1' y2='79.5' stroke-opacity='0.124'/%3E%3Cline x1='870.1' y1='209.6' x2='1019.9' y2='115.9' stroke-opacity='0.117'/%3E%3C/g%3E%3Cg fill='%232563EB' fill-opacity='0.12' filter='url%28%23og%29'%3E%3Ccircle cx='1282.7' cy='25.6' r='11.34'/%3E%3Ccircle cx='1313.9' cy='551.9' r='11.87'/%3E%3Ccircle cx='346.8' cy='249.6' r='12.59'/%3E%3Ccircle cx='1088.0' cy='744.9' r='11.05'/%3E%3Ccircle cx='437.7' cy='201.4' r='12.65'/%3E%3Ccircle cx='429.9' cy='522.7' r='12.22'/%3E%3Ccircle cx='643.1' cy='208.6' r='13.18'/%3E%3Ccircle cx='191.1' cy='559.6' r='11.20'/%3E%3Ccircle cx='1573.9' cy='475.0' r='12.92'/%3E%3Ccircle cx='1362.8' cy='29.9' r='10.52'/%3E%3Ccircle cx='727.8' cy='840.3' r='12.01'/%3E%3Ccircle cx='1209.5' cy='483.9' r='11.07'/%3E%3Ccircle cx='50.4' cy='819.0' r='12.04'/%3E%3Ccircle cx='778.1' cy='79.5' r='10.90'/%3E%3Ccircle cx='877.7' cy='247.9' r='11.98'/%3E%3Ccircle cx='377.1' cy='798.7' r='11.85'/%3E%3Ccircle cx='354.2' cy='133.8' r='12.58'/%3E%3Ccircle cx='910.8' cy='426.5' r='11.13'/%3E%3Ccircle cx='1157.4' cy='599.1' r='13.05'/%3E%3C/g%3E%3Cg fill='%2360a5fa'%3E%3Ccircle cx='1017.5' cy='41.5' r='2.08' fill-opacity='0.196'/%3E%3Ccircle cx='368.2' cy='653.4' r='3.37' fill-opacity='0.337'/%3E%3Ccircle cx='1411.8' cy='94.8' r='2.55' fill-opacity='0.248'/%3E%3Ccircle cx='66.5' cy='208.0' r='2.82' fill-opacity='0.277'/%3E%3Ccircle cx='61.4' cy='191.0' r='3.28' fill-opacity='0.327'/%3E%3Ccircle cx='870.1' cy='209.6' r='3.09' fill-opacity='0.306'/%3E%3Ccircle cx='1282.7' cy='25.6' r='3.78' fill-opacity='0.382'/%3E%3Ccircle cx='1109.1' cy='312.6' r='1.70' fill-opacity='0.154'/%3E%3Ccircle cx='1513.3' cy='309.5' r='1.50' fill-opacity='0.132'/%3E%3Ccircle cx='170.9' cy='748.8' r='3.13' fill-opacity='0.311'/%3E%3Ccircle cx='1279.1' cy='647.6' r='2.92' fill-opacity='0.288'/%3E%3Ccircle cx='1538.1' cy='345.5' r='2.97' fill-opacity='0.293'/%3E%3Ccircle cx='1313.9' cy='551.9' r='3.96' fill-opacity='0.402'/%3E%3Ccircle cx='920.7' cy='625.9' r='1.35' fill-opacity='0.116'/%3E%3Ccircle cx='375.5' cy='268.9' r='1.46' fill-opacity='0.128'/%3E%3Ccircle cx='383.2' cy='106.9' r='2.09' fill-opacity='0.197'/%3E%3Ccircle cx='1011.7' cy='333.8' r='2.38' fill-opacity='0.230'/%3E%3Ccircle cx='346.8' cy='249.6' r='4.20' fill-opacity='0.428'/%3E%3Ccircle cx='1030.9' cy='543.9' r='1.75' fill-opacity='0.160'/%3E%3Ccircle cx='1157.4' cy='160.5' r='2.41' fill-opacity='0.233'/%3E%3Ccircle cx='1563.7' cy='570.4' r='2.98' fill-opacity='0.295'/%3E%3Ccircle cx='1088.0' cy='744.9' r='3.68' fill-opacity='0.372'/%3E%3Ccircle cx='377.3' cy='47.6' r='2.21' fill-opacity='0.210'/%3E%3Ccircle cx='437.7' cy='201.4' r='4.22' fill-opacity='0.430'/%3E%3Ccircle cx='1387.1' cy='290.6' r='3.30' fill-opacity='0.329'/%3E%3Ccircle cx='637.2' cy='806.5' r='2.67' fill-opacity='0.261'/%3E%3Ccircle cx='433.2' cy='232.1' r='3.00' fill-opacity='0.296'/%3E%3Ccircle cx='429.9' cy='522.7' r='4.07' fill-opacity='0.414'/%3E%3Ccircle cx='643.1' cy='208.6' r='4.39' fill-opacity='0.449'/%3E%3Ccircle cx='814.9' cy='98.2' r='1.35' fill-opacity='0.116'/%3E%3Ccircle cx='191.1' cy='559.6' r='3.73' fill-opacity='0.377'/%3E%3Ccircle cx='678.6' cy='74.6' r='2.42' fill-opacity='0.234'/%3E%3Ccircle cx='1573.9' cy='475.0' r='4.31' fill-opacity='0.440'/%3E%3Ccircle cx='1362.8' cy='29.9' r='3.51' fill-opacity='0.352'/%3E%3Ccircle cx='1083.5' cy='481.8' r='2.05' fill-opacity='0.193'/%3E%3Ccircle cx='1019.9' cy='115.9' r='2.59' fill-opacity='0.252'/%3E%3Ccircle cx='727.8' cy='840.3' r='4.00' fill-opacity='0.407'/%3E%3Ccircle cx='430.9' cy='450.5' r='1.77' fill-opacity='0.163'/%3E%3Ccircle cx='1443.7' cy='768.6' r='2.16' fill-opacity='0.204'/%3E%3Ccircle cx='1016.8' cy='543.7' r='1.69' fill-opacity='0.153'/%3E%3Ccircle cx='1209.5' cy='483.9' r='3.69' fill-opacity='0.373'/%3E%3Ccircle cx='847.4' cy='20.5' r='2.24' fill-opacity='0.213'/%3E%3Ccircle cx='50.4' cy='819.0' r='4.01' fill-opacity='0.408'/%3E%3Ccircle cx='1317.4' cy='284.5' r='1.39' fill-opacity='0.120'/%3E%3Ccircle cx='1389.7' cy='834.4' r='1.47' fill-opacity='0.130'/%3E%3Ccircle cx='778.1' cy='79.5' r='3.63' fill-opacity='0.366'/%3E%3Ccircle cx='1214.7' cy='130.4' r='2.72' fill-opacity='0.266'/%3E%3Ccircle cx='877.7' cy='247.9' r='3.99' fill-opacity='0.405'/%3E%3Ccircle cx='680.1' cy='202.1' r='2.93' fill-opacity='0.289'/%3E%3Ccircle cx='1158.7' cy='193.0' r='2.20' fill-opacity='0.209'/%3E%3Ccircle cx='1572.4' cy='578.9' r='2.60' fill-opacity='0.253'/%3E%3Ccircle cx='827.4' cy='124.1' r='1.92' fill-opacity='0.179'/%3E%3Ccircle cx='547.4' cy='525.9' r='1.94' fill-opacity='0.181'/%3E%3Ccircle cx='363.5' cy='81.1' r='3.22' fill-opacity='0.321'/%3E%3Ccircle cx='377.1' cy='798.7' r='3.95' fill-opacity='0.401'/%3E%3Ccircle cx='130.5' cy='224.7' r='3.34' fill-opacity='0.334'/%3E%3Ccircle cx='354.2' cy='133.8' r='4.19' fill-opacity='0.427'/%3E%3Ccircle cx='910.8' cy='426.5' r='3.71' fill-opacity='0.375'/%3E%3Ccircle cx='1279.7' cy='183.8' r='1.51' fill-opacity='0.134'/%3E%3Ccircle cx='692.4' cy='384.3' r='2.69' fill-opacity='0.263'/%3E%3Ccircle cx='1157.4' cy='599.1' r='4.35' fill-opacity='0.444'/%3E%3Ccircle cx='173.5' cy='366.3' r='2.29' fill-opacity='0.219'/%3E%3Ccircle cx='1364.2' cy='233.8' r='1.81' fill-opacity='0.167'/%3E%3Ccircle cx='719.8' cy='382.8' r='2.09' fill-opacity='0.197'/%3E%3Ccircle cx='409.7' cy='814.0' r='2.62' fill-opacity='0.255'/%3E%3C/g%3E%3C/svg%3E") center/cover no-repeat fixed,
-    radial-gradient(ellipse 60% 40% at 15% 0%,rgba(37,99,235,0.10) 0%,transparent 60%),
-    radial-gradient(ellipse 50% 35% at 100% 15%,rgba(126,34,206,0.08) 0%,transparent 60%),
-    radial-gradient(ellipse 60% 40% at 50% 100%,rgba(37,99,235,0.06) 0%,transparent 60%),
-    var(--bg);
+  background:var(--bg);
   color:var(--white);font-family:var(--font);overflow-x:hidden;min-height:100vh;
 }
 a{color:inherit}
@@ -46,7 +38,7 @@ section{scroll-margin-top:92px}
 }
 .panel::before{
   content:'';position:absolute;top:0;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(37,99,235,0.5),transparent);
+  background:linear-gradient(90deg,transparent,rgba(140,169,204,0.5),transparent);
 }
 .eyebrow{font-size:0.68rem;font-weight:700;letter-spacing:0.12em;color:var(--blue);margin-bottom:10px}
 .p-h2{font-size:clamp(1.25rem,2vw,1.7rem);font-weight:800;letter-spacing:-0.01em;margin-bottom:6px}
@@ -61,7 +53,7 @@ nav{
 .nav-logo{display:flex;align-items:center;gap:10px;cursor:pointer;background:none;border:none;text-decoration:none}
 .nav-dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:blink 2s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.2}}
-.nav-photo{width:32px;height:32px;border-radius:50%;object-fit:cover;object-position:center top;border:1.5px solid rgba(37,99,235,0.5)}
+.nav-photo{width:32px;height:32px;border-radius:50%;object-fit:cover;object-position:center top;border:1.5px solid rgba(140,169,204,0.5)}
 .nav-id{display:flex;flex-direction:column;line-height:1.15;text-align:left}
 .nav-name{font-size:0.78rem;font-weight:700;color:var(--white)}
 .nav-role{font-size:0.6rem;color:var(--gray)}
@@ -79,21 +71,16 @@ nav{
 
 /* ═══════════════════ HERO ═══════════════════ */
 #hero{padding:40px 32px 0}
-/* Faint neural-network watermark -- a real multi-layer, fully-connected
-   network diagram (input -> 3 hidden layers -> output), not a repeating
-   tile, so it reads as one coherent diagram rather than wallpaper.
-   Opacity is baked into the SVG's own stroke/fill (not a CSS opacity on
-   the element, which would fade the real content too). */
 .hero-panel{
   padding:44px;margin-top:0;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='720' height='380' viewBox='0 0 720 380'%3E%3Cdefs%3E%3Cfilter id='gl' x='-100%25' y='-100%25' width='300%25' height='300%25'%3E%3CfeGaussianBlur stdDeviation='4'/%3E%3C/filter%3E%3C/defs%3E%3Cg stroke='%232563EB' stroke-width='1' fill='none' stroke-opacity='0.028'%3E%3Cline x1='40' y1='26' x2='210' y2='26'/%3E%3Cline x1='40' y1='26' x2='210' y2='108'/%3E%3Cline x1='40' y1='26' x2='210' y2='149'/%3E%3Cline x1='40' y1='26' x2='210' y2='231'/%3E%3Cline x1='40' y1='26' x2='210' y2='272'/%3E%3Cline x1='40' y1='26' x2='210' y2='354'/%3E%3Cline x1='40' y1='80.6667' x2='210' y2='67'/%3E%3Cline x1='40' y1='80.6667' x2='210' y2='108'/%3E%3Cline x1='40' y1='80.6667' x2='210' y2='190'/%3E%3Cline x1='40' y1='80.6667' x2='210' y2='231'/%3E%3Cline x1='40' y1='80.6667' x2='210' y2='313'/%3E%3Cline x1='40' y1='80.6667' x2='210' y2='354'/%3E%3Cline x1='40' y1='135.333' x2='210' y2='26'/%3E%3Cline x1='40' y1='135.333' x2='210' y2='67'/%3E%3Cline x1='40' y1='135.333' x2='210' y2='108'/%3E%3Cline x1='40' y1='135.333' x2='210' y2='149'/%3E%3Cline x1='40' y1='135.333' x2='210' y2='190'/%3E%3Cline x1='40' y1='135.333' x2='210' y2='272'/%3E%3Cline x1='40' y1='135.333' x2='210' y2='313'/%3E%3Cline x1='40' y1='190' x2='210' y2='26'/%3E%3Cline x1='40' y1='190' x2='210' y2='67'/%3E%3Cline x1='40' y1='190' x2='210' y2='149'/%3E%3Cline x1='40' y1='190' x2='210' y2='190'/%3E%3Cline x1='40' y1='190' x2='210' y2='272'/%3E%3Cline x1='40' y1='190' x2='210' y2='313'/%3E%3Cline x1='40' y1='190' x2='210' y2='354'/%3E%3Cline x1='40' y1='244.667' x2='210' y2='26'/%3E%3Cline x1='40' y1='244.667' x2='210' y2='108'/%3E%3Cline x1='40' y1='244.667' x2='210' y2='149'/%3E%3Cline x1='40' y1='244.667' x2='210' y2='231'/%3E%3Cline x1='40' y1='244.667' x2='210' y2='272'/%3E%3Cline x1='40' y1='244.667' x2='210' y2='354'/%3E%3Cline x1='40' y1='299.333' x2='210' y2='67'/%3E%3Cline x1='40' y1='299.333' x2='210' y2='108'/%3E%3Cline x1='40' y1='299.333' x2='210' y2='190'/%3E%3Cline x1='40' y1='299.333' x2='210' y2='231'/%3E%3Cline x1='40' y1='299.333' x2='210' y2='313'/%3E%3Cline x1='40' y1='299.333' x2='210' y2='354'/%3E%3Cline x1='40' y1='354' x2='210' y2='26'/%3E%3Cline x1='40' y1='354' x2='210' y2='67'/%3E%3Cline x1='40' y1='354' x2='210' y2='108'/%3E%3Cline x1='40' y1='354' x2='210' y2='149'/%3E%3Cline x1='40' y1='354' x2='210' y2='190'/%3E%3Cline x1='40' y1='354' x2='210' y2='272'/%3E%3Cline x1='40' y1='354' x2='210' y2='313'/%3E%3Cline x1='210' y1='26' x2='380' y2='67'/%3E%3Cline x1='210' y1='26' x2='380' y2='108'/%3E%3Cline x1='210' y1='26' x2='380' y2='190'/%3E%3Cline x1='210' y1='26' x2='380' y2='231'/%3E%3Cline x1='210' y1='26' x2='380' y2='313'/%3E%3Cline x1='210' y1='26' x2='380' y2='354'/%3E%3Cline x1='210' y1='67' x2='380' y2='26'/%3E%3Cline x1='210' y1='67' x2='380' y2='108'/%3E%3Cline x1='210' y1='67' x2='380' y2='149'/%3E%3Cline x1='210' y1='67' x2='380' y2='231'/%3E%3Cline x1='210' y1='67' x2='380' y2='272'/%3E%3Cline x1='210' y1='67' x2='380' y2='354'/%3E%3Cline x1='210' y1='108' x2='380' y2='26'/%3E%3Cline x1='210' y1='108' x2='380' y2='108'/%3E%3Cline x1='210' y1='108' x2='380' y2='149'/%3E%3Cline x1='210' y1='108' x2='380' y2='231'/%3E%3Cline x1='210' y1='108' x2='380' y2='272'/%3E%3Cline x1='210' y1='108' x2='380' y2='354'/%3E%3Cline x1='210' y1='149' x2='380' y2='26'/%3E%3Cline x1='210' y1='149' x2='380' y2='67'/%3E%3Cline x1='210' y1='149' x2='380' y2='149'/%3E%3Cline x1='210' y1='149' x2='380' y2='190'/%3E%3Cline x1='210' y1='149' x2='380' y2='231'/%3E%3Cline x1='210' y1='149' x2='380' y2='272'/%3E%3Cline x1='210' y1='149' x2='380' y2='313'/%3E%3Cline x1='210' y1='149' x2='380' y2='354'/%3E%3Cline x1='210' y1='190' x2='380' y2='26'/%3E%3Cline x1='210' y1='190' x2='380' y2='67'/%3E%3Cline x1='210' y1='190' x2='380' y2='108'/%3E%3Cline x1='210' y1='190' x2='380' y2='149'/%3E%3Cline x1='210' y1='190' x2='380' y2='190'/%3E%3Cline x1='210' y1='190' x2='380' y2='272'/%3E%3Cline x1='210' y1='190' x2='380' y2='313'/%3E%3Cline x1='210' y1='231' x2='380' y2='67'/%3E%3Cline x1='210' y1='231' x2='380' y2='108'/%3E%3Cline x1='210' y1='231' x2='380' y2='190'/%3E%3Cline x1='210' y1='231' x2='380' y2='231'/%3E%3Cline x1='210' y1='231' x2='380' y2='313'/%3E%3Cline x1='210' y1='231' x2='380' y2='354'/%3E%3Cline x1='210' y1='272' x2='380' y2='67'/%3E%3Cline x1='210' y1='272' x2='380' y2='108'/%3E%3Cline x1='210' y1='272' x2='380' y2='190'/%3E%3Cline x1='210' y1='272' x2='380' y2='231'/%3E%3Cline x1='210' y1='272' x2='380' y2='313'/%3E%3Cline x1='210' y1='272' x2='380' y2='354'/%3E%3Cline x1='210' y1='313' x2='380' y2='26'/%3E%3Cline x1='210' y1='313' x2='380' y2='108'/%3E%3Cline x1='210' y1='313' x2='380' y2='149'/%3E%3Cline x1='210' y1='313' x2='380' y2='231'/%3E%3Cline x1='210' y1='313' x2='380' y2='272'/%3E%3Cline x1='210' y1='313' x2='380' y2='354'/%3E%3Cline x1='210' y1='354' x2='380' y2='26'/%3E%3Cline x1='210' y1='354' x2='380' y2='67'/%3E%3Cline x1='210' y1='354' x2='380' y2='149'/%3E%3Cline x1='210' y1='354' x2='380' y2='190'/%3E%3Cline x1='210' y1='354' x2='380' y2='231'/%3E%3Cline x1='210' y1='354' x2='380' y2='272'/%3E%3Cline x1='210' y1='354' x2='380' y2='313'/%3E%3Cline x1='210' y1='354' x2='380' y2='354'/%3E%3Cline x1='380' y1='26' x2='550' y2='26'/%3E%3Cline x1='380' y1='26' x2='550' y2='67'/%3E%3Cline x1='380' y1='26' x2='550' y2='108'/%3E%3Cline x1='380' y1='26' x2='550' y2='149'/%3E%3Cline x1='380' y1='26' x2='550' y2='190'/%3E%3Cline x1='380' y1='26' x2='550' y2='272'/%3E%3Cline x1='380' y1='26' x2='550' y2='313'/%3E%3Cline x1='380' y1='67' x2='550' y2='26'/%3E%3Cline x1='380' y1='67' x2='550' y2='67'/%3E%3Cline x1='380' y1='67' x2='550' y2='149'/%3E%3Cline x1='380' y1='67' x2='550' y2='190'/%3E%3Cline x1='380' y1='67' x2='550' y2='231'/%3E%3Cline x1='380' y1='67' x2='550' y2='272'/%3E%3Cline x1='380' y1='67' x2='550' y2='313'/%3E%3Cline x1='380' y1='108' x2='550' y2='26'/%3E%3Cline x1='380' y1='108' x2='550' y2='67'/%3E%3Cline x1='380' y1='108' x2='550' y2='149'/%3E%3Cline x1='380' y1='108' x2='550' y2='190'/%3E%3Cline x1='380' y1='108' x2='550' y2='231'/%3E%3Cline x1='380' y1='108' x2='550' y2='272'/%3E%3Cline x1='380' y1='108' x2='550' y2='313'/%3E%3Cline x1='380' y1='108' x2='550' y2='354'/%3E%3Cline x1='380' y1='149' x2='550' y2='26'/%3E%3Cline x1='380' y1='149' x2='550' y2='108'/%3E%3Cline x1='380' y1='149' x2='550' y2='149'/%3E%3Cline x1='380' y1='149' x2='550' y2='231'/%3E%3Cline x1='380' y1='149' x2='550' y2='272'/%3E%3Cline x1='380' y1='149' x2='550' y2='354'/%3E%3Cline x1='380' y1='190' x2='550' y2='67'/%3E%3Cline x1='380' y1='190' x2='550' y2='108'/%3E%3Cline x1='380' y1='190' x2='550' y2='190'/%3E%3Cline x1='380' y1='190' x2='550' y2='231'/%3E%3Cline x1='380' y1='190' x2='550' y2='313'/%3E%3Cline x1='380' y1='190' x2='550' y2='354'/%3E%3Cline x1='380' y1='231' x2='550' y2='26'/%3E%3Cline x1='380' y1='231' x2='550' y2='67'/%3E%3Cline x1='380' y1='231' x2='550' y2='108'/%3E%3Cline x1='380' y1='231' x2='550' y2='149'/%3E%3Cline x1='380' y1='231' x2='550' y2='190'/%3E%3Cline x1='380' y1='231' x2='550' y2='272'/%3E%3Cline x1='380' y1='231' x2='550' y2='313'/%3E%3Cline x1='380' y1='272' x2='550' y2='26'/%3E%3Cline x1='380' y1='272' x2='550' y2='67'/%3E%3Cline x1='380' y1='272' x2='550' y2='149'/%3E%3Cline x1='380' y1='272' x2='550' y2='190'/%3E%3Cline x1='380' y1='272' x2='550' y2='272'/%3E%3Cline x1='380' y1='272' x2='550' y2='313'/%3E%3Cline x1='380' y1='313' x2='550' y2='26'/%3E%3Cline x1='380' y1='313' x2='550' y2='67'/%3E%3Cline x1='380' y1='313' x2='550' y2='149'/%3E%3Cline x1='380' y1='313' x2='550' y2='190'/%3E%3Cline x1='380' y1='313' x2='550' y2='231'/%3E%3Cline x1='380' y1='313' x2='550' y2='272'/%3E%3Cline x1='380' y1='313' x2='550' y2='313'/%3E%3Cline x1='380' y1='313' x2='550' y2='354'/%3E%3Cline x1='380' y1='354' x2='550' y2='26'/%3E%3Cline x1='380' y1='354' x2='550' y2='108'/%3E%3Cline x1='380' y1='354' x2='550' y2='149'/%3E%3Cline x1='380' y1='354' x2='550' y2='231'/%3E%3Cline x1='380' y1='354' x2='550' y2='354'/%3E%3Cline x1='550' y1='26' x2='680' y2='26'/%3E%3Cline x1='550' y1='26' x2='680' y2='135.333'/%3E%3Cline x1='550' y1='26' x2='680' y2='244.667'/%3E%3Cline x1='550' y1='26' x2='680' y2='354'/%3E%3Cline x1='550' y1='67' x2='680' y2='26'/%3E%3Cline x1='550' y1='67' x2='680' y2='135.333'/%3E%3Cline x1='550' y1='108' x2='680' y2='26'/%3E%3Cline x1='550' y1='108' x2='680' y2='135.333'/%3E%3Cline x1='550' y1='149' x2='680' y2='135.333'/%3E%3Cline x1='550' y1='149' x2='680' y2='244.667'/%3E%3Cline x1='550' y1='149' x2='680' y2='354'/%3E%3Cline x1='550' y1='190' x2='680' y2='26'/%3E%3Cline x1='550' y1='190' x2='680' y2='244.667'/%3E%3Cline x1='550' y1='190' x2='680' y2='354'/%3E%3Cline x1='550' y1='231' x2='680' y2='26'/%3E%3Cline x1='550' y1='231' x2='680' y2='135.333'/%3E%3Cline x1='550' y1='231' x2='680' y2='244.667'/%3E%3Cline x1='550' y1='231' x2='680' y2='354'/%3E%3Cline x1='550' y1='272' x2='680' y2='26'/%3E%3Cline x1='550' y1='272' x2='680' y2='135.333'/%3E%3Cline x1='550' y1='313' x2='680' y2='26'/%3E%3Cline x1='550' y1='313' x2='680' y2='135.333'/%3E%3Cline x1='550' y1='354' x2='680' y2='244.667'/%3E%3Cline x1='550' y1='354' x2='680' y2='354'/%3E%3C/g%3E%3Cg stroke='%232563EB' stroke-width='1' fill='none' stroke-opacity='0.065'%3E%3Cline x1='40' y1='26' x2='210' y2='67'/%3E%3Cline x1='40' y1='26' x2='210' y2='190'/%3E%3Cline x1='40' y1='26' x2='210' y2='313'/%3E%3Cline x1='40' y1='80.6667' x2='210' y2='26'/%3E%3Cline x1='40' y1='80.6667' x2='210' y2='272'/%3E%3Cline x1='40' y1='190' x2='210' y2='108'/%3E%3Cline x1='40' y1='190' x2='210' y2='231'/%3E%3Cline x1='40' y1='244.667' x2='210' y2='67'/%3E%3Cline x1='40' y1='244.667' x2='210' y2='190'/%3E%3Cline x1='40' y1='244.667' x2='210' y2='313'/%3E%3Cline x1='40' y1='299.333' x2='210' y2='272'/%3E%3Cline x1='210' y1='67' x2='380' y2='67'/%3E%3Cline x1='210' y1='67' x2='380' y2='190'/%3E%3Cline x1='210' y1='67' x2='380' y2='313'/%3E%3Cline x1='210' y1='108' x2='380' y2='67'/%3E%3Cline x1='210' y1='190' x2='380' y2='231'/%3E%3Cline x1='210' y1='231' x2='380' y2='26'/%3E%3Cline x1='210' y1='231' x2='380' y2='149'/%3E%3Cline x1='210' y1='272' x2='380' y2='26'/%3E%3Cline x1='210' y1='272' x2='380' y2='149'/%3E%3Cline x1='210' y1='272' x2='380' y2='272'/%3E%3Cline x1='210' y1='313' x2='380' y2='313'/%3E%3Cline x1='210' y1='354' x2='380' y2='108'/%3E%3Cline x1='380' y1='26' x2='550' y2='231'/%3E%3Cline x1='380' y1='67' x2='550' y2='108'/%3E%3Cline x1='380' y1='67' x2='550' y2='354'/%3E%3Cline x1='380' y1='149' x2='550' y2='313'/%3E%3Cline x1='380' y1='272' x2='550' y2='108'/%3E%3Cline x1='380' y1='272' x2='550' y2='231'/%3E%3Cline x1='380' y1='272' x2='550' y2='354'/%3E%3Cline x1='380' y1='354' x2='550' y2='67'/%3E%3Cline x1='380' y1='354' x2='550' y2='190'/%3E%3Cline x1='380' y1='354' x2='550' y2='272'/%3E%3Cline x1='380' y1='354' x2='550' y2='313'/%3E%3Cline x1='550' y1='67' x2='680' y2='244.667'/%3E%3Cline x1='550' y1='67' x2='680' y2='354'/%3E%3Cline x1='550' y1='272' x2='680' y2='244.667'/%3E%3Cline x1='550' y1='272' x2='680' y2='354'/%3E%3Cline x1='550' y1='313' x2='680' y2='244.667'/%3E%3Cline x1='550' y1='354' x2='680' y2='26'/%3E%3Cline x1='550' y1='354' x2='680' y2='135.333'/%3E%3C/g%3E%3Cg stroke='%2360a5fa' stroke-width='1.1' fill='none' stroke-opacity='0.13'%3E%3Cline x1='40' y1='80.6667' x2='210' y2='149'/%3E%3Cline x1='40' y1='135.333' x2='210' y2='231'/%3E%3Cline x1='40' y1='135.333' x2='210' y2='354'/%3E%3Cline x1='40' y1='299.333' x2='210' y2='26'/%3E%3Cline x1='40' y1='299.333' x2='210' y2='149'/%3E%3Cline x1='40' y1='354' x2='210' y2='231'/%3E%3Cline x1='40' y1='354' x2='210' y2='354'/%3E%3Cline x1='210' y1='26' x2='380' y2='26'/%3E%3Cline x1='210' y1='26' x2='380' y2='149'/%3E%3Cline x1='210' y1='26' x2='380' y2='272'/%3E%3Cline x1='210' y1='108' x2='380' y2='190'/%3E%3Cline x1='210' y1='108' x2='380' y2='313'/%3E%3Cline x1='210' y1='149' x2='380' y2='108'/%3E%3Cline x1='210' y1='190' x2='380' y2='354'/%3E%3Cline x1='210' y1='231' x2='380' y2='272'/%3E%3Cline x1='210' y1='313' x2='380' y2='67'/%3E%3Cline x1='210' y1='313' x2='380' y2='190'/%3E%3Cline x1='380' y1='26' x2='550' y2='354'/%3E%3Cline x1='380' y1='108' x2='550' y2='108'/%3E%3Cline x1='380' y1='149' x2='550' y2='67'/%3E%3Cline x1='380' y1='149' x2='550' y2='190'/%3E%3Cline x1='380' y1='190' x2='550' y2='26'/%3E%3Cline x1='380' y1='190' x2='550' y2='149'/%3E%3Cline x1='380' y1='190' x2='550' y2='272'/%3E%3Cline x1='380' y1='231' x2='550' y2='231'/%3E%3Cline x1='380' y1='231' x2='550' y2='354'/%3E%3Cline x1='380' y1='313' x2='550' y2='108'/%3E%3Cline x1='550' y1='108' x2='680' y2='244.667'/%3E%3Cline x1='550' y1='108' x2='680' y2='354'/%3E%3Cline x1='550' y1='149' x2='680' y2='26'/%3E%3Cline x1='550' y1='190' x2='680' y2='135.333'/%3E%3Cline x1='550' y1='313' x2='680' y2='354'/%3E%3C/g%3E%3Cg fill='%232563EB' fill-opacity='0.15' filter='url%28%23gl%29'%3E%3Ccircle cx='40' cy='26' r='9'/%3E%3Ccircle cx='40' cy='80.6667' r='9'/%3E%3Ccircle cx='40' cy='135.333' r='9'/%3E%3Ccircle cx='40' cy='190' r='9'/%3E%3Ccircle cx='40' cy='244.667' r='9'/%3E%3Ccircle cx='40' cy='299.333' r='9'/%3E%3Ccircle cx='40' cy='354' r='9'/%3E%3Ccircle cx='210' cy='26' r='9'/%3E%3Ccircle cx='210' cy='67' r='9'/%3E%3Ccircle cx='210' cy='108' r='9'/%3E%3Ccircle cx='210' cy='149' r='9'/%3E%3Ccircle cx='210' cy='190' r='9'/%3E%3Ccircle cx='210' cy='231' r='9'/%3E%3Ccircle cx='210' cy='272' r='9'/%3E%3Ccircle cx='210' cy='313' r='9'/%3E%3Ccircle cx='210' cy='354' r='9'/%3E%3Ccircle cx='380' cy='26' r='9'/%3E%3Ccircle cx='380' cy='67' r='9'/%3E%3Ccircle cx='380' cy='108' r='9'/%3E%3Ccircle cx='380' cy='149' r='9'/%3E%3Ccircle cx='380' cy='190' r='9'/%3E%3Ccircle cx='380' cy='231' r='9'/%3E%3Ccircle cx='380' cy='272' r='9'/%3E%3Ccircle cx='380' cy='313' r='9'/%3E%3Ccircle cx='380' cy='354' r='9'/%3E%3Ccircle cx='550' cy='26' r='9'/%3E%3Ccircle cx='550' cy='67' r='9'/%3E%3Ccircle cx='550' cy='108' r='9'/%3E%3Ccircle cx='550' cy='149' r='9'/%3E%3Ccircle cx='550' cy='190' r='9'/%3E%3Ccircle cx='550' cy='231' r='9'/%3E%3Ccircle cx='550' cy='272' r='9'/%3E%3Ccircle cx='550' cy='313' r='9'/%3E%3Ccircle cx='550' cy='354' r='9'/%3E%3Ccircle cx='680' cy='26' r='9'/%3E%3Ccircle cx='680' cy='135.333' r='9'/%3E%3Ccircle cx='680' cy='244.667' r='9'/%3E%3Ccircle cx='680' cy='354' r='9'/%3E%3C/g%3E%3Cg fill='%2393c5fd' fill-opacity='0.28'%3E%3Ccircle cx='40' cy='26' r='3'/%3E%3Ccircle cx='40' cy='80.6667' r='3'/%3E%3Ccircle cx='40' cy='135.333' r='3'/%3E%3Ccircle cx='40' cy='190' r='3'/%3E%3Ccircle cx='40' cy='244.667' r='3'/%3E%3Ccircle cx='40' cy='299.333' r='3'/%3E%3Ccircle cx='40' cy='354' r='3'/%3E%3Ccircle cx='210' cy='26' r='3'/%3E%3Ccircle cx='210' cy='67' r='3'/%3E%3Ccircle cx='210' cy='108' r='3'/%3E%3Ccircle cx='210' cy='149' r='3'/%3E%3Ccircle cx='210' cy='190' r='3'/%3E%3Ccircle cx='210' cy='231' r='3'/%3E%3Ccircle cx='210' cy='272' r='3'/%3E%3Ccircle cx='210' cy='313' r='3'/%3E%3Ccircle cx='210' cy='354' r='3'/%3E%3Ccircle cx='380' cy='26' r='3'/%3E%3Ccircle cx='380' cy='67' r='3'/%3E%3Ccircle cx='380' cy='108' r='3'/%3E%3Ccircle cx='380' cy='149' r='3'/%3E%3Ccircle cx='380' cy='190' r='3'/%3E%3Ccircle cx='380' cy='231' r='3'/%3E%3Ccircle cx='380' cy='272' r='3'/%3E%3Ccircle cx='380' cy='313' r='3'/%3E%3Ccircle cx='380' cy='354' r='3'/%3E%3Ccircle cx='550' cy='26' r='3'/%3E%3Ccircle cx='550' cy='67' r='3'/%3E%3Ccircle cx='550' cy='108' r='3'/%3E%3Ccircle cx='550' cy='149' r='3'/%3E%3Ccircle cx='550' cy='190' r='3'/%3E%3Ccircle cx='550' cy='231' r='3'/%3E%3Ccircle cx='550' cy='272' r='3'/%3E%3Ccircle cx='550' cy='313' r='3'/%3E%3Ccircle cx='550' cy='354' r='3'/%3E%3Ccircle cx='680' cy='26' r='3'/%3E%3Ccircle cx='680' cy='135.333' r='3'/%3E%3Ccircle cx='680' cy='244.667' r='3'/%3E%3Ccircle cx='680' cy='354' r='3'/%3E%3C/g%3E%3C/svg%3E");
+  background-image:radial-gradient(ellipse at 78% 65%,rgba(140,169,204,0.05),transparent 65%);
   background-repeat:no-repeat;background-position:center;background-size:cover;
 }
-.hero-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:center}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:28px;align-items:center}
 .hero-status{
   display:inline-flex;align-items:center;gap:8px;font-size:0.63rem;font-weight:600;letter-spacing:0.09em;
-  /* color:var(--yellow);background:rgba(251,191,36,0.07);border:1px solid rgba(251,191,36,0.18); */
-  color:var(--green);background:rgba(0,255,136,0.05);border:1px solid rgba(0,255,136,0.2);
+  /* color:var(--yellow);background:rgba(191,164,125,0.07);border:1px solid rgba(191,164,125,0.18); */
+  color:var(--green);background:rgba(141,169,148,0.05);border:1px solid rgba(141,169,148,0.2);
   border-radius:20px;padding:5px 14px;margin-bottom:24px;
 }
 .hero-status-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:blink 2s infinite}
@@ -102,8 +89,8 @@ nav{
 .hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px}
 .pill{font-size:0.63rem;font-weight:600;padding:5px 13px;border-radius:20px;border:1px solid var(--border-blue);color:var(--blue);background:var(--blue3)}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
-.btn-fill{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;border:none;padding:11px 24px;border-radius:9px;font-size:0.76rem;font-weight:700;cursor:pointer;text-decoration:none;box-shadow:0 0 28px rgba(37,99,235,0.32);transition:transform .2s,box-shadow .2s}
-.btn-fill:hover{transform:translateY(-2px);box-shadow:0 0 44px rgba(37,99,235,0.5)}
+.btn-fill{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;border:none;padding:11px 24px;border-radius:9px;font-size:0.76rem;font-weight:700;cursor:pointer;text-decoration:none;box-shadow:0 0 28px rgba(140,169,204,0.32);transition:transform .2s,box-shadow .2s}
+.btn-fill:hover{transform:translateY(-2px);box-shadow:0 0 44px rgba(140,169,204,0.5)}
 .btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--white);border:1px solid rgba(255,255,255,0.16);padding:11px 24px;border-radius:9px;font-size:0.76rem;font-weight:700;cursor:pointer;text-decoration:none;transition:all .2s}
 .btn-ghost:hover{border-color:var(--blue);color:var(--blue)}
 .hero-contacts{display:flex;gap:18px;flex-wrap:wrap}
@@ -111,54 +98,20 @@ nav{
 .hc-item .ic{width:14px;height:14px}
 .hc-item:hover{color:var(--white)}
 
-.hero-illust{position:relative;height:430px;display:flex;align-items:center;justify-content:center}
-.orbit{position:absolute;border-radius:50%;border:1px solid rgba(37,99,235,0.12)}
-.o1{width:190px;height:190px;animation:spin 26s linear infinite}
-.o2{width:270px;height:270px;animation:spin 42s linear infinite reverse;border-style:dashed;border-color:rgba(37,99,235,0.08)}
-.o3{width:340px;height:340px;animation:spin 66s linear infinite;border-color:rgba(126,34,206,0.08)}
-@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-/* Counter-rotate each tech-node badge at the same rate/duration as .o3 but
-   in reverse, so the badge orbits with the ring (position) without ever
-   appearing upside-down (orientation) -- gimbal-style. --tx/--ty (set per
-   .tnN below) place each badge at an equal radius from center, so this one
-   keyframe drives every badge; the keyframe bakes in that offset since an
-   animated `transform` replaces rather than composes with it. */
-@keyframes counter-spin{
-  from{transform:translate(-50%,-50%) translate(var(--tx),var(--ty)) rotate(0deg)}
-  to{transform:translate(-50%,-50%) translate(var(--tx),var(--ty)) rotate(-360deg)}
-}
-.hero-photo{width:150px;height:150px;border-radius:50%;object-fit:cover;object-position:center top;border:2.5px solid rgba(37,99,235,0.5);box-shadow:0 0 50px rgba(37,99,235,0.28);position:relative;z-index:5;animation:glow-breathe 4s ease-in-out infinite}
-@keyframes glow-breathe{0%,100%{box-shadow:0 0 34px rgba(37,99,235,0.28)}50%{box-shadow:0 0 66px rgba(37,99,235,0.5)}}
-/* Neuron-style links between the tech-node badges: ring (neighbor-to-
-   neighbor octagon) + an 8-point star polygon (each badge to the one 3
-   steps around the circle). No spokes to the center -- that read as a
-   bicycle-wheel hub rather than neural connectivity, so links stay
-   badge-to-badge only. Deliberately NOT counter-rotated like .t-node is --
-   it should spin rigidly with .o3, tracing the same circle the badges'
-   anchor points move along, while the badges themselves independently
-   stay upright on top of it. z-index sits below both .t-node (4) and
-   .hero-photo (5) so it passes behind them. */
-.node-links{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none}
-.node-links line,.node-links-ring{stroke:var(--blue);stroke-width:1;stroke-opacity:0.16;fill:none}
-/* All 8 badges anchor at .o3's center (top/left:50%) and share one fixed
-   circular size -- equal "planets" -- then --tx/--ty (equal-radius, 45°
-   apart, same 170px radius as .o3 itself so each sits right on the orbit
-   ring) place them around the circle via the counter-spin keyframe above. */
-.t-node{position:absolute;top:50%;left:50%;z-index:4;width:84px;height:84px;box-sizing:border-box;border-radius:50%;background:var(--card2);border:1px solid var(--border-blue);padding:8px;font-size:0.52rem;font-weight:700;text-align:center;line-height:1.3;color:var(--gray);transition:border-color .25s,color .25s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;animation:counter-spin 66s linear infinite}
-.t-node .ic{width:14px;height:14px;flex-shrink:0}
-.t-node:hover{border-color:var(--blue);color:var(--white)}
-/* Two closely-related blue shades, alternating around the ring, instead
-   of a rainbow -- keeps every adjacent pair visually distinct (the earlier
-   "no two neighbors the same color" requirement) without reintroducing
-   yellow/purple into what should be a mostly blue+green palette. */
-.tn1{--tx:0px;--ty:-170px;color:#60a5fa}
-.tn2{--tx:120px;--ty:-120px;color:#38bdf8}
-.tn3{--tx:170px;--ty:0px;color:#60a5fa}
-.tn4{--tx:120px;--ty:120px;color:#38bdf8}
-.tn5{--tx:0px;--ty:170px;color:#60a5fa}
-.tn6{--tx:-120px;--ty:120px;color:#38bdf8}
-.tn7{--tx:-170px;--ty:0px;color:#60a5fa}
-.tn8{--tx:-120px;--ty:-120px;color:#38bdf8}
+/* Neural illustration: irregular connections and independently placed brand marks. */
+.hero-illust{position:relative;width:100%;max-width:620px;aspect-ratio:1;margin:auto;isolation:isolate}
+.hero-neural-art{display:block;width:100%;height:auto;mask-image:radial-gradient(ellipse 68% 70% at 50% 48%,#000 52%,transparent 76%)}
+.hero-neural-links{position:absolute;inset:0;width:100%;height:100%;color:var(--blue);opacity:.6;pointer-events:none}
+.hero-tech-logos{list-style:none;margin:0;padding:0}
+.hero-tech-logo{position:absolute;display:flex;align-items:center;gap:7px;padding:8px 10px;border:1px solid rgba(140,169,204,.24);border-radius:7px;background:linear-gradient(135deg,rgba(19,23,31,.92),rgba(18,18,20,.86));box-shadow:0 4px 18px rgba(0,0,0,.28);color:var(--white);font-size:clamp(.62rem,.85vw,.78rem);font-weight:500;white-space:nowrap}
+.hero-tech-logo img{display:block;width:clamp(22px,2.5vw,36px);height:clamp(22px,2.5vw,36px);object-fit:contain}
+.hero-tech-python{left:4%;top:12%}
+.hero-tech-csharp{right:5%;top:23%;border-color:rgba(191,164,125,.28)}
+.hero-tech-pytorch{left:0;top:43%}
+.hero-tech-dotnet{right:0;top:47%;border-color:rgba(191,164,125,.28)}
+.hero-tech-docker{left:4%;bottom:14%}
+.hero-tech-postgres{right:0;bottom:17%;border-color:rgba(191,164,125,.28)}
+.ic.brand-icon{object-fit:contain}
 
 /* ═══════════════════ EXPAND / DISCLOSURE ═══════════════════ */
 .expand-toggle{
@@ -184,7 +137,7 @@ nav{
 .t-row{display:grid;grid-template-columns:20px 1fr;gap:14px;position:relative;padding-bottom:20px}
 .t-row:last-child{padding-bottom:0}
 .t-dotcol{display:flex;flex-direction:column;align-items:center}
-.t-mark{width:9px;height:9px;border-radius:50%;background:var(--blue);border:2px solid rgba(37,99,235,0.25);flex-shrink:0;margin-top:3px}
+.t-mark{width:9px;height:9px;border-radius:50%;background:var(--blue);border:2px solid rgba(140,169,204,0.25);flex-shrink:0;margin-top:3px}
 .t-line{flex:1;width:1px;background:var(--border);margin-top:4px}
 .t-row:last-child .t-line{display:none}
 .t-co{font-size:0.82rem;font-weight:700}
@@ -194,7 +147,7 @@ nav{
 .about-phil{font-size:0.8rem;color:var(--gray);line-height:1.8}
 .edu-list{display:flex;flex-direction:column;gap:14px}
 .edu-row{display:flex;align-items:center;gap:12px}
-.edu-icon{width:36px;height:36px;border-radius:9px;background:rgba(37,99,235,0.08);border:1px solid var(--border-blue);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.edu-icon{width:36px;height:36px;border-radius:9px;background:rgba(140,169,204,0.08);border:1px solid var(--border-blue);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .edu-icon .ic{width:17px;height:17px}
 .edu-name{font-size:0.78rem;font-weight:700}
 .edu-sub{font-size:0.66rem;color:var(--gray)}
@@ -239,11 +192,11 @@ nav{
 .feat-title{font-size:0.84rem;font-weight:700;margin:12px 0 6px}
 .feat-desc{font-size:0.7rem;color:var(--gray);line-height:1.55;margin-bottom:10px}
 .feat-link{font-size:0.62rem;font-weight:700;color:var(--blue);letter-spacing:0.05em}
-.agent-teaser{margin:8px 0 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;background:linear-gradient(135deg,rgba(251,191,36,0.06),rgba(37,99,235,0.05));border:1px solid rgba(251,191,36,0.18);border-radius:14px;padding:16px 20px}
+.agent-teaser{margin:8px 0 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;background:linear-gradient(135deg,rgba(191,164,125,0.06),rgba(140,169,204,0.05));border:1px solid rgba(191,164,125,0.18);border-radius:14px;padding:16px 20px}
 .agent-teaser-text{font-size:0.74rem;color:var(--gray);display:flex;align-items:center;gap:10px}
 .agent-teaser-text b{color:var(--white)}
-.btn-yellow{display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:#000;border:none;padding:10px 20px;border-radius:8px;flex-shrink:0;font-size:0.72rem;font-weight:800;cursor:pointer;text-decoration:none;box-shadow:0 0 22px rgba(251,191,36,0.25);transition:all .2s}
-.btn-yellow:hover{box-shadow:0 0 40px rgba(251,191,36,0.45);transform:translateY(-2px)}
+.btn-yellow{display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:#000;border:none;padding:10px 20px;border-radius:8px;flex-shrink:0;font-size:0.72rem;font-weight:800;cursor:pointer;text-decoration:none;box-shadow:0 0 22px rgba(191,164,125,0.25);transition:all .2s}
+.btn-yellow:hover{box-shadow:0 0 40px rgba(191,164,125,0.45);transform:translateY(-2px)}
 .btn-yellow .ic{width:14px;height:14px}
 .proj-tabs{display:flex;gap:0;margin-bottom:26px;border:1px solid var(--border);border-radius:10px;overflow:hidden;width:fit-content}
 .proj-tab{padding:9px 22px;font-size:0.72rem;font-weight:700;border:none;cursor:pointer;background:transparent;color:var(--gray);transition:all .2s}
@@ -275,22 +228,22 @@ nav{
 
 /* ═══════════════════ ASK NR / CHATBOT ═══════════════════ */
 .agent-intro{display:flex;align-items:center;gap:16px;margin-bottom:10px}
-.agent-panel{background:var(--card2);border:1px solid rgba(251,191,36,0.2);border-radius:16px;padding:26px;position:relative}
-.agent-panel::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(251,191,36,0.5),transparent)}
-.agent-badge{display:inline-flex;align-items:center;gap:8px;font-size:0.62rem;font-weight:800;letter-spacing:0.08em;background:rgba(251,191,36,0.1);color:var(--yellow);border:1px solid rgba(251,191,36,0.25);border-radius:8px;padding:6px 14px;margin-bottom:18px}
+.agent-panel{background:var(--card2);border:1px solid rgba(191,164,125,0.2);border-radius:16px;padding:26px;position:relative}
+.agent-panel::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(191,164,125,0.5),transparent)}
+.agent-badge{display:inline-flex;align-items:center;gap:8px;font-size:0.62rem;font-weight:800;letter-spacing:0.08em;background:rgba(191,164,125,0.1);color:var(--yellow);border:1px solid rgba(191,164,125,0.25);border-radius:8px;padding:6px 14px;margin-bottom:18px}
 .agent-badge .ic{width:13px;height:13px}
 /* Embedded TalentBot Space, wrapped in our own header chrome (.chat-head)
    so a plain iframe reads as part of the page rather than a bare embed.
    The Space's own theme is already dark-mode and color-matched to this
    site's blue/yellow palette (see space-deploy/app.py's THEME/CUSTOM_CSS),
    so the iframe itself needs no extra styling beyond filling its slot. */
-.hf-embed{background:#070610;border:1px solid rgba(37,99,235,0.22);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.hf-embed{background:#070610;border:1px solid rgba(140,169,204,0.22);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
 .chat-head{background:#0e0d17;padding:12px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;flex-shrink:0}
-.chat-head-avatar{width:30px;height:30px;border-radius:50%;background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.3);display:flex;align-items:center;justify-content:center;color:var(--yellow);flex-shrink:0}
+.chat-head-avatar{width:30px;height:30px;border-radius:50%;background:rgba(191,164,125,0.12);border:1px solid rgba(191,164,125,0.3);display:flex;align-items:center;justify-content:center;color:var(--yellow);flex-shrink:0}
 .chat-head-avatar .ic{width:15px;height:15px}
 .chat-head-name{font-size:0.76rem;font-weight:800;color:var(--white)}
 .chat-head-status{display:flex;align-items:center;gap:6px;font-size:0.62rem;color:var(--gray);font-family:var(--mono);margin-top:2px}
-.status-dot{width:6px;height:6px;border-radius:50%;background:#34D399;box-shadow:0 0 6px rgba(52,211,153,0.7);animation:blink 2s ease-in-out infinite}
+.status-dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 6px rgba(141,169,148,0.25);animation:blink 2s ease-in-out infinite}
 .hf-frame{flex:1;width:100%;border:none;background:#000}
 .hf-embed-main{height:760px}
 .hf-embed-side{height:390px}
@@ -300,7 +253,7 @@ nav{
 .chat-head-sm .chat-head-name{font-size:0.7rem}
 .chat-head-sm .chat-head-status{font-size:0.58rem}
 .pm-flow{display:flex;align-items:center;flex-wrap:wrap;gap:6px;padding:14px;background:rgba(0,0,0,0.3);border-radius:10px;border:1px solid var(--border)}
-.pm-box{padding:5px 10px;border-radius:6px;border:1px solid var(--border-blue);background:rgba(37,99,235,0.07);color:var(--blue);font-size:0.62rem;font-weight:600;font-family:var(--mono)}
+.pm-box{padding:5px 10px;border-radius:6px;border:1px solid var(--border-blue);background:rgba(140,169,204,0.07);color:var(--blue);font-size:0.62rem;font-weight:600;font-family:var(--mono)}
 .pm-arr{color:var(--blue);font-size:0.85rem}
 
 /* ═══════════════════ CONTACT ═══════════════════ */
@@ -308,7 +261,7 @@ nav{
 .contact-info-list{margin-bottom:22px}
 .cdetail{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);font-size:0.76rem}
 .cdetail:last-child{border:none}
-.cicon{width:34px;height:34px;border-radius:9px;background:rgba(37,99,235,0.08);border:1px solid var(--border-blue);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cicon{width:34px;height:34px;border-radius:9px;background:rgba(140,169,204,0.08);border:1px solid var(--border-blue);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .cicon .ic{width:16px;height:16px}
 .clabel{font-size:0.58rem;color:var(--gray);letter-spacing:0.07em;text-transform:uppercase;margin-bottom:2px}
 .cval{font-size:0.76rem;color:var(--white);font-weight:500}
@@ -329,7 +282,7 @@ nav{
 .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;font-size:0.58rem;text-align:center}
 .cal-grid span{color:var(--gray);padding:4px 0}
 .cal-day{padding:5px 0;border-radius:5px;color:var(--gray)}
-.cal-day.avail{background:rgba(37,99,235,0.12);color:var(--blue);font-weight:700;cursor:pointer}
+.cal-day.avail{background:rgba(140,169,204,0.12);color:var(--blue);font-weight:700;cursor:pointer}
 .cal-day.today{border:1px solid var(--yellow);color:var(--yellow);font-weight:700}
 .local-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
 .local-card{background:var(--card2);border:1px solid var(--border);border-radius:12px;padding:14px;display:flex;align-items:center;gap:12px}
@@ -345,7 +298,7 @@ nav{
 .pm-close:hover{border-color:var(--blue);color:var(--white)}
 .pm-title{font-size:1.15rem;font-weight:800;margin-bottom:6px}
 .pm-sub{font-size:0.74rem;color:var(--gray);margin-bottom:10px}
-.pm-badge{display:inline-block;font-size:0.6rem;font-weight:700;padding:3px 10px;border-radius:10px;background:rgba(37,99,235,0.12);color:var(--blue);border:1px solid var(--border-blue)}
+.pm-badge{display:inline-block;font-size:0.6rem;font-weight:700;padding:3px 10px;border-radius:10px;background:rgba(140,169,204,0.12);color:var(--blue);border:1px solid var(--border-blue)}
 .pm-body{padding:24px 28px 28px}
 .pm-section{margin-bottom:22px}
 .pm-section-title{font-size:0.63rem;font-weight:700;letter-spacing:0.1em;color:var(--blue);margin-bottom:10px;display:flex;align-items:center;gap:8px}
@@ -358,7 +311,7 @@ nav{
 .pm-tag{font-size:0.66rem;font-weight:600;padding:4px 11px;border-radius:7px;border:1px solid var(--border);color:var(--gray)}
 
 /* ═══════════════════ SIDE PANEL (persistent chat + contact) ═══════════════════ */
-.side-fab{position:fixed;right:24px;bottom:24px;z-index:250;width:56px;height:56px;border-radius:50%;background:var(--blue);border:none;color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 34px rgba(37,99,235,0.5);transition:transform .2s,background .2s}
+.side-fab{position:fixed;right:24px;bottom:24px;z-index:250;width:56px;height:56px;border-radius:50%;background:var(--blue);border:none;color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 34px rgba(140,169,204,0.5);transition:transform .2s,background .2s}
 .side-fab:hover{transform:scale(1.07)}
 .side-fab.is-open{background:var(--card2);border:1px solid var(--border-blue)}
 .side-fab .ic{width:24px;height:24px}
@@ -377,14 +330,14 @@ nav{
 .side-panel-tabs{display:flex;border-bottom:1px solid var(--border);flex-shrink:0}
 .side-tab-btn{flex:1;padding:11px;font-size:0.66rem;font-weight:700;color:var(--gray);background:none;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:all .2s;border-bottom:2px solid transparent}
 .side-tab-btn .ic{width:14px;height:14px}
-.side-tab-btn.active{color:var(--white);background:rgba(37,99,235,0.08);border-bottom-color:var(--blue)}
+.side-tab-btn.active{color:var(--white);background:rgba(140,169,204,0.08);border-bottom-color:var(--blue)}
 .side-panel-body{flex:1;overflow-y:auto}
 .side-tab-content{display:none;padding:16px}
 .side-tab-content.active{display:block}
 .side-tab-content#side-chat{padding:12px}
 .side-cdetail{display:flex;align-items:center;gap:11px;padding:10px 0;border-bottom:1px solid var(--border);font-size:0.72rem}
 .side-cdetail:last-of-type{border-bottom:none}
-.side-cicon{width:30px;height:30px;border-radius:8px;background:rgba(37,99,235,0.08);border:1px solid var(--border-blue);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.side-cicon{width:30px;height:30px;border-radius:8px;background:rgba(140,169,204,0.08);border:1px solid var(--border-blue);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .side-cicon .ic{width:14px;height:14px}
 .side-clabel{font-size:0.56rem;color:var(--gray);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:1px}
 .side-cval{font-size:0.72rem;color:var(--white);font-weight:600}
@@ -417,7 +370,7 @@ footer{padding:26px 32px;border-top:1px solid var(--border);display:flex;justify
 }
 @media(max-width:900px){
   .hero-grid{grid-template-columns:1fr}
-  .hero-illust{display:none}
+  .hero-illust{display:block;max-width:500px}
   .spectrum-grid{grid-template-columns:1fr 1fr}
   .feat-grid{grid-template-columns:1fr}
   .skills-grid{grid-template-columns:1fr}
@@ -438,4 +391,38 @@ footer{padding:26px 32px;border-top:1px solid var(--border);display:flex;justify
   .side-fab{right:16px;bottom:16px;width:50px;height:50px}
   .side-fab .ic{width:21px;height:21px}
   .side-panel{right:10px;left:10px;width:auto;bottom:78px;max-height:66vh}
+}
+
+/* Color roles: neutral framing keeps the accent budget on actions and state. */
+.panel{background-color:var(--bg)}
+.panel::before,.agent-panel::before{display:none}
+.eyebrow,.block-title,.t-role,.pm-section-title{color:var(--gray)}
+.block-title::before,.pm-section-title::before{background:var(--gray)}
+.hero-status{color:var(--gray);background:var(--card2);border-color:var(--border)}
+.pill,.tag.b,.pm-tag,.pm-badge,.pm-box{color:var(--gray);background:var(--card2);border-color:var(--border)}
+.spectrum-card,.skill-card,.feat-card,.proj-card,.hist-card,.radar-panel{
+  background:linear-gradient(135deg,var(--card),var(--card2));
+}
+/* Badge colors are currently also supplied inline by the HTML templates. */
+.ibadge,.spectrum-icon-badge,.icon-cell-badge,.lang-code{
+  color:var(--gray)!important;background:var(--card2)!important;
+}
+.edu-icon,.cicon,.side-cicon{background:var(--card2);border-color:var(--border);color:var(--gray)}
+.agent-teaser,.agent-panel{background:var(--card2);border-color:var(--border)}
+.agent-badge{background:transparent;border-color:var(--border);color:var(--gray)}
+.hf-embed,.chat-head{background:var(--card2);border-color:var(--border)}
+.chat-head-avatar{color:var(--gray);background:var(--card);border-color:var(--border)}
+.btn-fill,.proj-tab.active,.side-contact-jump,.side-chat-jump{color:var(--bg)}
+.btn-fill{box-shadow:0 0 16px rgba(140,169,204,0.12)}
+.btn-fill:hover{box-shadow:0 0 22px rgba(140,169,204,0.22)}
+.btn-yellow{box-shadow:0 0 16px rgba(191,164,125,0.12)}
+.btn-yellow:hover{box-shadow:0 0 22px rgba(191,164,125,0.22)}
+.side-fab{background:var(--card);color:var(--blue);border:1px solid var(--border-blue);box-shadow:0 8px 24px rgba(0,0,0,0.4)}
+.nav-photo,.about-photo{border-color:var(--border)}
+.nav-dot,.hero-status-dot,.status-dot,.side-fab-dot{animation:none}
+:where(a,button,input,textarea):focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+
+@media(max-width:640px){
+  .hero-tech-logo{gap:4px;padding:5px 6px;font-size:.6rem}
+  .hero-tech-logo img{width:24px;height:24px}
 }
