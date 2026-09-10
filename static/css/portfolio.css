@@ -10,7 +10,7 @@
   --blue:#8CA9CC;
   --blue3:rgba(140,169,204,0.08);
   --yellow:#BFA47D;
-  --green:#8DA994;
+  --green:#57C990;
   --purple:#9983AC;
   --orange:#BFA47D;
   --white:#D8D7D4;
@@ -109,8 +109,8 @@ nav{
 .hero-tech-csharp{right:5%;top:23%;border-color:rgba(191,164,125,.28)}
 .hero-tech-pytorch{left:0;top:43%}
 .hero-tech-dotnet{right:0;top:47%;border-color:rgba(191,164,125,.28)}
-.hero-tech-docker{left:4%;bottom:14%}
-.hero-tech-postgres{right:0;bottom:17%;border-color:rgba(191,164,125,.28)}
+.hero-tech-docker{left:0;bottom:22%}
+.hero-tech-postgres{right:0;bottom:10%;border-color:rgba(191,164,125,.28)}
 .ic.brand-icon{object-fit:contain}
 
 /* ═══════════════════ EXPAND / DISCLOSURE ═══════════════════ */
@@ -409,7 +409,7 @@ footer{padding:26px 32px;border-top:1px solid var(--border);display:flex;justify
 .panel::before,.agent-panel::before{display:none}
 .eyebrow,.block-title,.career-role,.pm-section-title{color:var(--gray)}
 .block-title::before,.pm-section-title::before{background:var(--gray)}
-.hero-status{color:var(--gray);background:var(--card2);border-color:var(--border)}
+.hero-status{color:var(--green);background:rgba(87,201,144,.07);border-color:rgba(87,201,144,.3)}
 .pill,.tag.b,.pm-tag,.pm-badge,.pm-box{color:var(--gray);background:var(--card2);border-color:var(--border)}
 .spectrum-card,.skill-card,.feat-card,.proj-card,.hist-card,.radar-panel{
   background:linear-gradient(135deg,var(--card),var(--card2));
@@ -471,3 +471,6 @@ footer{padding:26px 32px;border-top:1px solid var(--border);display:flex;justify
 .language-flag{display:block;flex-shrink:0;width:32px;height:24px;border-radius:3px;object-fit:cover;border:1px solid var(--border)}
 .lang-row{gap:18px}
 .lang-item{align-items:center}
+
+.hero-tech-sqlserver{left:0;bottom:0;border-color:rgba(191,164,125,.28)}
+#about .expand-toggle{margin-top:26px}

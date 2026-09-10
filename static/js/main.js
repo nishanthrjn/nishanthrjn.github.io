@@ -1,4 +1,4 @@
-import { toggleExpand } from './modules/disclosure.js';
+import { toggleExpand } from './modules/disclosure.js?v=20260910-6';
 import { toggleSidePanel, switchSideTab } from './modules/sidePanel.js';
 import { openModal, closeModal, closeModalOutside, initModalKeyboardDismiss } from './modules/modal.js';
 import { switchTab } from './modules/projectTabs.js';

@@ -3,4 +3,5 @@ export function toggleExpand(btn, bodyId) {
   const nowOpen = !body.classList.contains('open');
   body.classList.toggle('open', nowOpen);
   btn.classList.toggle('open', nowOpen);
+  btn.setAttribute('aria-expanded', String(nowOpen));
 }
