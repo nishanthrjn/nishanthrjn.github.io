@@ -1,5 +1,5 @@
 import { BOOKING } from '../data/booking.js?v=20260910-21';
-import { getBookingSelection } from './bookingCalendar.js?v=20260910-21';
+import { getBookingSelection } from './bookingCalendar.js?v=20260910-22';
 import { isBookableDate, isBookableTime, validDuration } from './bookingRequest.js?v=20260910-21';
 
 let submitting = false;

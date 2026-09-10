@@ -757,3 +757,48 @@ button.spectrum-card{font-family:inherit;color:inherit;cursor:pointer}
 
 .booking-controls select[size]{max-height:8rem;overflow-y:auto}
 .booking-controls select[size] option{padding:6px}
+
+/* Keep calendar decisions alongside their editable message and send action. */
+#contact .contact-panel{padding-bottom:100px}
+#contact .contact-title{margin-bottom:16px}
+#contact .contact-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:24px;align-items:start;margin-bottom:24px}
+#contact .contact-intro h3{font-size:1.2rem;line-height:1.4;margin:0}
+#contact .contact-intro-copy{max-width:none;margin:0}
+.contact-workspace{--booking-height:420px;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:28px;align-items:start;position:relative;z-index:1;overflow-anchor:none}
+#contact .contact-booking .contact-block-title{margin-bottom:10px;font-size:1rem}
+#contact .contact-booking .cal-widget{max-width:none;min-height:var(--booking-height)}
+#contact .contact-workspace .cform{min-height:var(--booking-height);margin-top:29px}
+.contact-fields{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+#contact .contact-message-field{flex:1}
+#contact .contact-message-field textarea{flex:1;min-height:220px;line-height:1.6}
+#contact .booking-controls{gap:6px;padding:8px 0}
+#contact #bookingTime{height:96px;max-height:96px}
+#contact .contact-calendar-note{margin-top:8px}
+.contact-details-row{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.65fr) minmax(0,1fr);gap:24px;margin-top:28px;position:relative;z-index:1}
+#contact .contact-details-row .contact-block-title{font-size:.9rem;margin-bottom:12px}
+#contact .contact-details-row .contact-local{grid-column:auto}
+#contact .contact-details-row .local-row{grid-template-columns:1fr;gap:12px}
+#contact .contact-details-row .social-list{gap:10px}
+#contact .contact-skyline{height:85px}
+@media(max-width:900px){
+  .contact-workspace{gap:18px;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .contact-fields{grid-template-columns:1fr}
+  .contact-details-row{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  #contact .contact-details-row .contact-local{grid-column:1/-1}
+  #contact .contact-details-row .local-row{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  #contact .contact-intro{grid-template-columns:1fr;gap:8px;margin-bottom:18px}
+  .contact-workspace{grid-template-columns:1fr;gap:12px}
+  #contact .contact-booking .cal-widget{min-height:var(--booking-height);padding:12px}
+  #contact .contact-workspace .cform{min-height:0;margin-top:0;gap:8px}
+  .contact-fields{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}
+  #contact .contact-message-field textarea{height:128px;min-height:128px;flex:auto;line-height:1.5}
+  #contact .contact-workspace .fg input{padding:9px;font-size:.72rem}
+  #contact .contact-booking .contact-block-title{margin-bottom:8px}
+  #contact .contact-calendar-note{margin-top:6px}
+  .contact-details-row{margin-top:24px;gap:20px}
+  #contact .contact-details-row .contact-direct{grid-column:1/-1}
+  #contact .contact-details-row .contact-local{grid-column:auto}
+  #contact .contact-details-row .local-row{grid-template-columns:1fr}
+}

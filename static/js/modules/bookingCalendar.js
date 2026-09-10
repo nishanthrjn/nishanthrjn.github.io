@@ -86,7 +86,21 @@ export function initBookingCalendar() {
           sync();
         }
         timeSelect.focus({ preventScroll: true });
-        controls.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'nearest' });
+        // Keep the calendar and draft together whenever the viewport can fit
+        // them. Otherwise reveal only controls that are actually obscured.
+        const workspace = document.querySelector('.contact-workspace');
+        const workspaceRect = workspace.getBoundingClientRect();
+        const controlsRect = controls.getBoundingClientRect();
+        const viewport = window.visualViewport;
+        const viewportTop = viewport?.offsetTop || 0;
+        const bottom = viewportTop + (viewport?.height || innerHeight) - 12;
+        const navBottom = document.querySelector('nav')?.getBoundingClientRect().bottom || 0;
+        const top = Math.max(viewportTop, navBottom) + 12;
+        const target = workspaceRect.height <= bottom - top ? workspaceRect : controlsRect;
+        let delta = 0;
+        if (target.bottom > bottom) delta = target.bottom - bottom;
+        if (target.top - delta < top) delta = target.top - top;
+        if (Math.abs(delta) > 1) window.scrollBy({ top: delta, behavior: 'instant' });
       });
     }
     dayCells.push(cell);

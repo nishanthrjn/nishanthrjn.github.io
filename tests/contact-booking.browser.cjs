@@ -127,6 +127,24 @@ const url = process.env.PORTFOLIO_TEST_URL || 'http://127.0.0.1:8767';
       const bounds = await page.locator('#bookingControls').boundingBox();
       assert(bounds.width > 0 && bounds.x >= 0 && bounds.x + bounds.width <= width);
     }
+    for (const [width, height] of [[1440, 900], [1366, 768], [768, 1024], [390, 844]]) {
+      await page.setViewportSize({ width, height });
+      await page.locator('[data-date="2026-09-15"]').click();
+      await page.waitForTimeout(300);
+      const layout = await page.evaluate(() => {
+        const top = document.querySelector('nav').getBoundingClientRect().bottom;
+        const selectors = ['.contact-booking .cal-widget', '#contactMessage', '#contactForm button[type="submit"]'];
+        return selectors.map(selector => {
+          const rect = document.querySelector(selector).getBoundingClientRect();
+          return { selector, visible: rect.top >= top && rect.bottom <= innerHeight };
+        });
+      });
+      assert(layout.every(item => item.visible), `${width}x${height}: ${JSON.stringify(layout)}`);
+      const before = await page.evaluate(() => scrollY);
+      await page.locator('[data-date="2026-09-22"]').click();
+      assert(Math.abs(await page.evaluate(() => scrollY) - before) <= 1, 'Visible booking controls should not scroll the page');
+    }
+    console.log('PASS: calendar, message and send button visible together; visible date changes do not scroll');
     await page.locator('#bookingTime').evaluate(e => {
       e.add(new Option('Invalid time', '25:99')); e.value = '25:99'; e.dispatchEvent(new Event('change'));
     });
