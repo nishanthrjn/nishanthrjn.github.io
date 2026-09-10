@@ -737,3 +737,20 @@ button.spectrum-card{font-family:inherit;color:inherit;cursor:pointer}
 #contact .cal-day.avail:hover{color:var(--white);background:rgba(140,169,204,.3)}
 #projects .proj-card-desc{color:var(--gray)}
 ::selection{background:rgba(140,169,204,.3);color:var(--white)}
+
+/* Booking controls only: preserve the existing calendar cells and form design. */
+#contact button.cal-day{font-family:inherit;font-size:inherit;line-height:inherit;border:0}
+#contact button.cal-day.today,#contact button.cal-day.selected{border:1px solid var(--border-gold);color:var(--yellow);background:rgba(191,164,125,.12)}
+#contact button.cal-day:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.booking-controls{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;padding:10px 0;text-align:left;min-width:0}
+.booking-controls label{display:flex;flex-direction:column;gap:5px;font-size:.65rem;color:var(--gray);min-width:0}
+.booking-controls select{width:100%;min-width:0;padding:7px 6px;border:1px solid var(--border);border-radius:5px;background:var(--card2);color:var(--white);font:inherit;color-scheme:dark}
+.booking-date,.booking-timezone{grid-column:1/-1;color:var(--gray);font-size:.62rem;line-height:1.5}
+.booking-date{color:var(--blue)}
+.contact-honeypot{display:none!important}
+.contact-form-status{font-size:.73rem;line-height:1.5;color:var(--gray)}
+.contact-form-status[hidden]{display:none}
+.contact-form-status[data-state="error"]{color:var(--yellow)}
+.contact-form-status[data-state="success"]{color:var(--blue)}
+#contact [aria-invalid="true"]{outline:1px solid var(--yellow);outline-offset:2px}
+#contact .cform button:disabled,#contact .booking-controls select:disabled{cursor:wait}

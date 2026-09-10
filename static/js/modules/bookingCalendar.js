@@ -1,118 +1,95 @@
+import { BOOKING } from '../data/booking.js?v=20260910-20';
+import { createDraftUpdater, dateFromKey, formatBookingDate, isBookableDate, isBookableTime, zonedNow } from './bookingRequest.js?v=20260910-20';
+
 const WEEKDAY_LABELS = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
-
-/*
- * Optional:
- * Days of the CURRENT month that you want recruiters to be able to request.
- *
- * If you want every future weekday to be selectable automatically,
- * you don't need this array. The implementation below does that.
- */
-
-function requestBookingDay(date, cell) {
-  const message = document.getElementById('contactMessage');
-
-  const formattedDate = date.toLocaleDateString('en-GB', {
-    weekday: 'long',
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  });
-
-  if (message) {
-    message.value = `I'd like to schedule a call on ${formattedDate}.`;
-    message.focus();
-  }
-
-  const form = document.getElementById('contactForm');
-
-  (form || cell).scrollIntoView({
-    behavior: 'smooth',
-    block: 'center',
-  });
-}
+let selection = { requestedDate: '', requestedTime: '', duration: '', timezone: BOOKING.timezone };
+export function getBookingSelection() { return { ...selection }; }
 
 export function initBookingCalendar() {
   const grid = document.getElementById('calGrid');
   const header = document.getElementById('calHead');
-
-  if (!grid) return;
-
-  // Clear previous calendar in case this function runs more than once.
+  const form = document.getElementById('contactForm');
+  if (!grid || !form) return;
   grid.innerHTML = '';
+  selection = { requestedDate: '', requestedTime: '', duration: '', timezone: BOOKING.timezone };
+  const updateDraft = createDraftUpdater();
+  const message = document.getElementById('contactMessage');
+  const name = document.getElementById('contactName');
+  const today = zonedNow().date;
+  const current = dateFromKey(today);
+  const year = current.getUTCFullYear(), month = current.getUTCMonth();
+  const offset = new Date(Date.UTC(year, month, 1)).getUTCDay();
+  const dayCount = new Date(Date.UTC(year, month + 1, 0)).getUTCDate();
+  if (header) header.textContent = new Intl.DateTimeFormat('en-US', {
+    month: 'long', year: 'numeric', timeZone: 'UTC',
+  }).format(current);
 
-  const now = new Date();
+  const controls = document.createElement('div');
+  controls.className = 'booking-controls';
+  controls.id = 'bookingControls';
+  controls.innerHTML = `<p class="booking-date" id="bookingDateLabel"></p>
+    <label for="bookingTime">Select time<select id="bookingTime" name="requestedTime" form="contactForm" required aria-describedby="bookingTimezone"></select></label>
+    <label for="bookingDuration">Duration<select id="bookingDuration" name="duration" form="contactForm" required><option value="">Select duration</option></select></label>
+    <p class="booking-timezone" id="bookingTimezone"></p>`;
+  const timeSelect = controls.querySelector('#bookingTime');
+  const durationSelect = controls.querySelector('#bookingDuration');
+  BOOKING.durations.forEach(minutes => durationSelect.add(new Option(`${minutes} minutes`, String(minutes))));
+  controls.querySelector('#bookingTimezone').textContent = `Timezone: ${BOOKING.timezone}`;
+  const sync = () => {
+    form.elements.requestedDate.value = selection.requestedDate;
+    form.elements.timezone.value = BOOKING.timezone;
+    message.value = updateDraft(message.value, selection, name.value);
+    form.dispatchEvent(new Event('bookingchange'));
+  };
+  timeSelect.addEventListener('change', () => { selection.requestedTime = timeSelect.value; sync(); });
+  durationSelect.addEventListener('change', () => { selection.duration = durationSelect.value; sync(); });
+  name.addEventListener('input', () => { if (selection.requestedDate) sync(); });
 
-  const year = now.getFullYear();
-  const month = now.getMonth();
-
-  // Example: "September 2026"
-  if (header) {
-    header.textContent = new Intl.DateTimeFormat('en-US', {
-      month: 'long',
-      year: 'numeric',
-    }).format(now);
-  }
-
-  // First weekday of current month.
-  const firstDayOffset = new Date(year, month, 1).getDay();
-
-  // Number of days in current month.
-  const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-  const today = now.getDate();
-
-  // Weekday headings.
   WEEKDAY_LABELS.forEach(label => {
-    const cell = document.createElement('span');
-    cell.textContent = label;
-    grid.appendChild(cell);
+    const cell = document.createElement('span'); cell.textContent = label; grid.appendChild(cell);
   });
-
-  // Empty cells before day 1.
-  for (let i = 0; i < firstDayOffset; i++) {
-    grid.appendChild(document.createElement('div'));
-  }
-
-  // Calendar days.
-  for (let day = 1; day <= daysInMonth; day++) {
-    const cell = document.createElement('div');
-
-    const date = new Date(year, month, day);
-
-    const dayOfWeek = date.getDay();
-
-    const isToday = day === today;
-
-    const isPast = date < new Date(
-      now.getFullYear(),
-      now.getMonth(),
-      now.getDate()
-    );
-
-    const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
-
-    // Automatically allow future weekdays.
-    const isAvailable = !isPast && !isWeekend;
-
-    cell.className =
-      'cal-day' +
-      (isAvailable ? ' avail' : '') +
-      (isToday ? ' today' : '');
-
+  for (let i = 0; i < offset; i++) grid.appendChild(document.createElement('div'));
+  const dayCells = [];
+  for (let day = 1; day <= dayCount; day++) {
+    const key = new Date(Date.UTC(year, month, day, 12)).toISOString().slice(0, 10);
+    const available = isBookableDate(key);
+    const cell = document.createElement(available ? 'button' : 'div');
+    cell.className = 'cal-day' + (available ? ' avail' : '') + (key === today ? ' today' : '');
     cell.textContent = day;
-
-    if (isAvailable) {
-      cell.title = `Request ${date.toLocaleDateString('en-US', {
-        month: 'long',
-        day: 'numeric',
-        year: 'numeric',
-      })}`;
-
+    cell.dataset.date = key;
+    if (key === today) cell.setAttribute('aria-current', 'date');
+    if (available) {
+      cell.type = 'button';
+      cell.title = `Request ${formatBookingDate(key)}`;
+      cell.setAttribute('aria-label', cell.title);
+      cell.setAttribute('aria-pressed', 'false');
+      cell.setAttribute('aria-controls', 'bookingControls');
       cell.addEventListener('click', () => {
-        requestBookingDay(date, cell);
+        if (form.getAttribute('aria-busy') === 'true' || !isBookableDate(key)) return;
+        if (selection.requestedDate !== key) {
+          selection = { requestedDate: key, requestedTime: '', duration: '', timezone: BOOKING.timezone };
+          dayCells.forEach(candidate => {
+            const selected = candidate === cell;
+            candidate.classList.toggle('selected', selected);
+            if (candidate.tagName === 'BUTTON') candidate.setAttribute('aria-pressed', String(selected));
+          });
+          timeSelect.replaceChildren(new Option('Select time', ''));
+          BOOKING.timeSlots.forEach(time => {
+            const option = new Option(time, time);
+            option.disabled = !isBookableTime(key, time);
+            timeSelect.add(option);
+          });
+          durationSelect.value = '';
+          controls.querySelector('#bookingDateLabel').textContent = formatBookingDate(key);
+          const rowEndDay = Math.min(Math.ceil((offset + day) / 7) * 7 - offset, dayCount);
+          dayCells[rowEndDay - 1].after(controls);
+          sync();
+        }
+        timeSelect.focus({ preventScroll: true });
+        controls.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'nearest' });
       });
     }
-
+    dayCells.push(cell);
     grid.appendChild(cell);
   }
 }

@@ -7,7 +7,7 @@
 <title>Nishanth Rajan — Software Engineer | Backend & Applied AI</title>
 <meta name="description" content="Nishanth Rajan — Software Engineer in Hannover with professional C#/.NET, backend, SQL, CAD/engineering-software experience and current hands-on work in Python, RAG, LLM Orchestration and agentic systems.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/static/css/portfolio.css?v=20260910-19">
+<link rel="stylesheet" href="/static/css/portfolio.css?v=20260910-20">
 </head>
 <body>
 
@@ -251,11 +251,15 @@
           <p class="contact-intro-copy">Open to Software Engineer, Python/Applied AI, backend, and C#/.NET roles in Germany. EU Blue Card. Available immediately.</p>
           <div class="contact-info-list" id="contactInfoList"></div>
         </div>
-        <form class="cform" id="contactForm" onsubmit="handleForm(event)">
-          <div class="fg"><label for="contactName">Your name</label><input id="contactName" name="name" type="text" autocomplete="name" placeholder="Your name"></div>
-          <div class="fg"><label for="contactEmail">Email</label><input id="contactEmail" name="email" type="email" autocomplete="email" placeholder="Email address"></div>
-          <div class="fg"><label for="contactMessage">Your message</label><textarea id="contactMessage" name="message" rows="5" placeholder="Tell me about the role or project..."></textarea></div>
+        <form class="cform" id="contactForm" method="post" onsubmit="handleForm(event)" novalidate>
+          <div class="fg"><label for="contactName">Your name</label><input id="contactName" name="name" type="text" required autocomplete="name" placeholder="Your name"></div>
+          <div class="fg"><label for="contactEmail">Email</label><input id="contactEmail" name="email" type="email" required autocomplete="email" placeholder="Email address"></div>
+          <div class="fg"><label for="contactMessage">Your message</label><textarea id="contactMessage" name="message" rows="5" required placeholder="Tell me about the role or project..."></textarea></div>
           <button type="submit" class="btn-fill"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg>Send message</button>
+          <input type="hidden" name="requestedDate" value="">
+          <input type="hidden" name="timezone" value="">
+          <input type="text" name="_gotcha" class="contact-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <p id="contactFormStatus" class="contact-form-status" role="status" aria-live="polite" aria-atomic="true" hidden></p>
         </form>
         <div class="contact-social">
           <h3 class="contact-block-title">Social Links</h3>
@@ -340,6 +344,6 @@
   </div>
 </div>
 
-<script type="module" src="/static/js/main.js?v=20260910-18"></script>
+<script type="module" src="/static/js/main.js?v=20260910-20"></script>
 </body>
 </html>
