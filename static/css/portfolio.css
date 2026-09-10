@@ -103,9 +103,16 @@ nav{
 .hero-neural-art{display:block;width:100%;height:auto;mask-image:radial-gradient(ellipse 68% 70% at 50% 48%,#000 52%,transparent 76%)}
 .hero-neural-links{position:absolute;inset:0;width:100%;height:100%;color:var(--blue);opacity:.6;pointer-events:none}
 .hero-art-heading{position:absolute;left:36%;right:25%;top:0;display:flex;flex-direction:column;align-items:center;gap:5px;color:var(--blue);font-size:clamp(.7rem,1.2vw,1rem);font-weight:600;letter-spacing:.06em;text-shadow:0 0 14px rgba(140,169,204,.3)}
+.hero-art-heading span{display:inline-block;transition:transform .2s ease,text-shadow .2s ease,color .2s ease}
+.hero-art-heading span:hover,.hero-art-heading span:focus-visible{transform:translateY(-3px) scale(1.16);color:#fff;text-shadow:0 0 16px rgba(140,169,204,.95),0 0 28px rgba(191,164,125,.5)}
+.hero-art-heading span:focus-visible{outline:2px solid var(--blue);outline-offset:5px;border-radius:3px}
+@media(prefers-reduced-motion:reduce){.hero-art-heading span{transition:none}.hero-art-heading span:hover,.hero-art-heading span:focus-visible{transform:none}}
 .hero-art-heading span+span{font-size:.82em;color:var(--white);font-weight:500}
 .hero-skill-map{list-style:none;margin:0;padding:0}
-.hero-skill{position:absolute;color:var(--white)}
+.hero-skill{position:absolute;color:var(--white);transform-origin:center;transition:transform .2s ease,filter .2s ease,color .2s ease}
+.hero-skill:hover,.hero-skill:focus-visible{z-index:3;transform:translateY(-4px) scale(1.16);filter:drop-shadow(0 0 12px rgba(140,169,204,.7));color:#fff}
+.hero-skill:focus-visible{outline:2px solid var(--blue);outline-offset:5px;border-radius:5px}
+@media(prefers-reduced-motion:reduce){.hero-skill{transition:none}.hero-skill:hover,.hero-skill:focus-visible{transform:none}}
 .hero-skill img{display:block;object-fit:contain;flex-shrink:0}
 .hero-symbol img{width:clamp(26px,3.2vw,44px);height:clamp(26px,3.2vw,44px);filter:drop-shadow(0 0 10px rgba(140,169,204,.16))}
 .hero-symbol .hero-mark-label{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
@@ -561,6 +568,11 @@ button.spectrum-card{font-family:inherit;color:inherit;cursor:pointer}
 .proj-card-stack{font-size:.64rem;line-height:1.6;color:var(--gray);overflow-wrap:anywhere}
 #projects .feat-card:hover,#projects .proj-card:hover{box-shadow:-5px 2px 22px rgba(140,169,204,.08),5px 2px 22px rgba(191,164,125,.08);transform:translateY(-2px)}
 .showcase-banner{margin:26px 0 24px;padding:12px 18px;border:1px solid rgba(191,164,125,.35);border-radius:7px;background:linear-gradient(100deg,#242e40,#6d573b);text-align:center;font-size:1rem;font-weight:500;letter-spacing:.03em}
+.showcase-details{margin:0 0 20px;border:1px solid var(--border);border-radius:9px;background:rgba(255,255,255,.025)}
+.showcase-details>summary{padding:14px 18px;color:var(--blue);font-size:.82rem;font-weight:500;cursor:pointer}
+.showcase-details>summary:hover{color:var(--white);background:rgba(140,169,204,.06)}
+.showcase-details>summary:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:9px}
+.showcase-details-body{padding:0 18px 20px}
 .showcase-heading{font-size:1.15rem;line-height:1.4;font-weight:500;margin:24px 0 12px;color:var(--white)}
 .showcase-diagrams{display:grid;gap:16px}
 .showcase-diagrams figure{margin:0;border:1px solid transparent;border-radius:10px;overflow:hidden;background:linear-gradient(#080a0d,#080a0d) padding-box,linear-gradient(115deg,rgba(140,169,204,.4),rgba(191,164,125,.4)) border-box}
@@ -593,5 +605,9 @@ button.spectrum-card{font-family:inherit;color:inherit;cursor:pointer}
 }
 @media(prefers-reduced-motion:reduce){#projects .feat-card,#projects .proj-card{transition:none;transform:none}}
 
-.showcase-chat .hf-embed-main{height:600px}
-@media(max-width:560px){.showcase-chat .hf-embed-main{height:500px}}
+/* Fit the hosted app's welcome screen, composer, and suggested questions. */
+.showcase-chat .hf-embed-main{height:auto}
+.showcase-chat .hf-frame{flex:none;height:1240px}
+@media(max-width:900px){.showcase-chat .hf-frame{height:1360px}}
+@media(max-width:560px){.showcase-chat .hf-frame{height:1580px}}
+@media(max-width:360px){.showcase-chat .hf-frame{height:1680px}}
