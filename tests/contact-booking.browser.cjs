@@ -38,6 +38,9 @@ const url = process.env.PORTFOLIO_TEST_URL || 'http://127.0.0.1:8767';
       await page.locator('#contactEmail').fill('alice@example.com');
     };
     assert.equal(await page.locator('#bookingControls').count(), 0);
+    assert.equal(await page.locator('#contactInfoList .cdetail').count(), 2);
+    assert(!/Hannover|Blue Card/.test(await page.locator('#contactInfoList').textContent()));
+    assert.match(await page.locator('#localRow').textContent(), /Hannover/);
     assert.equal(await page.locator('[data-date="2026-09-09"]').getAttribute('type'), null);
     assert.equal(await page.locator('[data-date="2026-09-12"]').getAttribute('type'), null);
     await submit(); assert.match(await status(), /enter your name/);
@@ -100,11 +103,18 @@ const url = process.env.PORTFOLIO_TEST_URL || 'http://127.0.0.1:8767';
     await page.waitForFunction(() => document.querySelector('#contactFormStatus').dataset.state === 'success');
     assert.equal(await page.locator('#contactForm button[type="submit"]').isDisabled(), false);
     assert.equal(await page.locator('#contactForm button[type="submit"]').textContent(), 'Send message');
+    assert.equal(await page.locator('#contactMessage').inputValue(), '');
+    assert.match(await status(), /Message sent successfully/);
+    assert(await page.locator('#contactForm button[type="submit"]').evaluate(e => e.classList.contains('is-sent')));
+    assert(await page.locator('#contactFormStatus').evaluate(e => e.getBoundingClientRect().top >= document.querySelector('#contactForm button[type="submit"]').getBoundingClientRect().bottom));
+    await page.waitForFunction(() => !document.querySelector('#contactForm button[type="submit"]').classList.contains('is-sent'));
+
     for (const [key, value] of Object.entries({ name: 'Alice Visitor', email: 'alice@example.com', requestedDate: '2026-09-11', requestedTime: '14:00', duration: '30', timezone: 'Europe/Berlin' })) {
       assert(calls[0].includes(`name="${key}"\r\n\r\n${value}\r\n`), key);
     }
     assert(calls[0].includes('name="message"'));
     assert(calls[0].includes('name="_gotcha"'));
+    await page.locator('#contactMessage').fill(expectedMessage);
     await submit(); assert.equal(calls.length, 1); assert.match(await status(), /already sent/);
     console.log('PASS: separate payload fields, loading lock, success and duplicate protection');
     for (const failure of ['error', 'network', 'timeout']) {
@@ -113,6 +123,7 @@ const url = process.env.PORTFOLIO_TEST_URL || 'http://127.0.0.1:8767';
       await submit();
       await page.waitForFunction(() => document.querySelector('#contactFormStatus').dataset.state === 'error');
       assert.match(await status(), /Submission failed/);
+      assert.equal(await page.locator('#contactForm button[type="submit"]').evaluate(e => e.classList.contains('is-sent')), false);
       assert.match(await page.locator('#contactMessage').inputValue(), new RegExp(`Test ${failure}`));
       assert.equal(await page.locator('#contactForm button[type="submit"]').isDisabled(), false);
     }

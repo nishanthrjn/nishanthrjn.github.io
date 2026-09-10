@@ -4,6 +4,18 @@ import { isBookableDate, isBookableTime, validDuration } from './bookingRequest.
 
 let submitting = false;
 let lastSuccessfulRequest = '';
+let successFlashTimer;
+
+function clearSuccessFlash(button) {
+  clearTimeout(successFlashTimer);
+  button.classList.remove('is-sent');
+}
+
+function flashSuccess(button) {
+  clearSuccessFlash(button);
+  button.classList.add('is-sent');
+  successFlashTimer = setTimeout(() => button.classList.remove('is-sent'), 1600);
+}
 
 function setStatus(form, text, state = '') {
   const status = form.querySelector('#contactFormStatus');
@@ -71,6 +83,7 @@ export async function handleForm(event) {
   Object.entries(fields).forEach(([key, value]) => data.append(key, value));
   const button = form.querySelector('button[type="submit"]');
   const originalButton = button.innerHTML;
+  clearSuccessFlash(button);
   // Freeze this request while it is in flight; keep every entered value on failure.
   const controls = [...form.elements, ...document.querySelectorAll('#calGrid button')];
   const disabledStates = controls.map(control => control.disabled);
@@ -87,7 +100,9 @@ export async function handleForm(event) {
     });
     if (!response.ok) throw new Error('Submission failed');
     lastSuccessfulRequest = fingerprint;
-    setStatus(form, 'Message/call request sent successfully. Your requested time is subject to confirmation.', 'success');
+    message.value = '';
+    flashSuccess(button);
+    setStatus(form, 'Message sent successfully. Thanks for reaching out. I’ll get back to you soon.', 'success');
   } catch {
     setStatus(form, 'Submission failed. Please try again.', 'error');
   } finally {

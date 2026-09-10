@@ -802,3 +802,10 @@ button.spectrum-card{font-family:inherit;color:inherit;cursor:pointer}
   #contact .contact-details-row .contact-local{grid-column:auto}
   #contact .contact-details-row .local-row{grid-template-columns:1fr}
 }
+
+#contact .cform .btn-fill.is-sent{background:linear-gradient(100deg,#675b46,#8d7654);border-color:var(--yellow);color:#fff;animation:contact-sent-flash 1.6s ease-out}
+@keyframes contact-sent-flash{
+  0%,100%{box-shadow:0 0 0 rgba(191,164,125,0)}
+  30%{box-shadow:0 0 22px rgba(191,164,125,.55)}
+}
+@media(prefers-reduced-motion:reduce){#contact .cform .btn-fill.is-sent{animation:none}}

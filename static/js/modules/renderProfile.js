@@ -192,7 +192,6 @@ function renderContact(contact) {
   setHtml('contactInfoList', `
     <div class="cdetail"><div class="cicon">${iconSvg('i-mail')}</div><div><div class="clabel">Email</div><div class="cval"><a href="mailto:${contact.email}">${contact.email}</a></div></div></div>
     <div class="cdetail"><div class="cicon">${iconSvg('i-phone')}</div><div><div class="clabel">Phone</div><div class="cval"><a href="${contact.phoneHref}">${contact.phone}</a></div></div></div>
-    <div class="cdetail"><div class="cicon">${iconSvg('i-location')}</div><div><div class="clabel">Location</div><div class="cval">${contact.locationDetail}</div></div></div>
   `);
 
   setHtml('socialList', `
