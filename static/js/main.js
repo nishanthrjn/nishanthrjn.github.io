@@ -7,7 +7,7 @@ import { initRadarChart } from './modules/radarChart.js';
 import { initBookingCalendar } from './modules/bookingCalendar.js';
 import { initScrollReveal } from './modules/scrollReveal.js';
 import { handleForm } from './modules/contactForm.js';
-import { renderProfile } from './modules/renderProfile.js?v=20260910-9';
+import { renderProfile } from './modules/renderProfile.js?v=20260910-11';
 import { renderProjects } from './modules/renderProjects.js';
 import { CONTACT, PROFILE, TIMELINE, SKILLS } from './data/content.js?v=20260910-5';
 import { PROJECTS } from './data/projects.js';

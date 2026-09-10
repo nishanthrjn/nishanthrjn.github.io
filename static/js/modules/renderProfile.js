@@ -145,11 +145,43 @@ function renderSkillCard(card) {
 }
 
 function renderSkills(skills) {
-  setHtml('spectrumGrid', skills.spectrum.map(s => `
-    <div class="spectrum-card"><div class="spectrum-icon-badge" style="background:${s.bg};color:${s.color}">${skillIcon(s)}</div><div class="spectrum-label">${s.label}</div></div>
+  const cardByTitle = title => skills.cards.find(card => card.title === title);
+  const ai = cardByTitle('Python & Applied AI');
+  const databases = cardByTitle('Data & Databases');
+  const pick = (card, labels) => card.items.filter(item => labels.includes(item.label));
+  const selectedCategories = {
+    'Python': ai,
+    'C# / .NET': cardByTitle('C# / .NET Stack'),
+    'LLM Integration': {kind: 'icons', items: pick(ai, ['FastAPI', 'LangChain', 'Semantic Kernel / Microsoft Agent Framework (MAF)', 'RAG', 'Groq / Llama', 'Prompt Engineering'])},
+    'Agentic Workflows': {kind: 'icons', items: pick(ai, ['Semantic Kernel / Microsoft Agent Framework (MAF)', 'LangChain', 'NegMAS'])},
+    'Document Intelligence': {kind: 'icons', items: pick(ai, ['Python', 'FastAPI', 'RAG', 'Vector Retrieval'])},
+    'Vector Search': {kind: 'icons', items: [...pick(ai, ['Vector Retrieval']), ...pick(databases, ['pgvector', 'FAISS'])]},
+    'DevOps / AWS Exposure': cardByTitle('DevOps & Tooling'),
+    'CAD / Engineering': cardByTitle('Engineering Software'),
+  };
+  setHtml('spectrumGrid', skills.spectrum.map((s, index) => `
+    <button type="button" class="spectrum-card" id="spectrum-category-${index}" aria-expanded="false" aria-controls="skillCategoryDetails">
+      <span class="spectrum-icon-badge" style="background:${s.bg};color:${s.color}">${skillIcon(s)}</span>
+      <span class="spectrum-label">${s.label}</span>
+    </button>
   `).join(''));
-
   setHtml('skillsGrid', skills.cards.map(renderSkillCard).join(''));
+
+  const details = document.getElementById('skillCategoryDetails');
+  const buttons = [...document.querySelectorAll('#spectrumGrid .spectrum-card')];
+  buttons.forEach((button, index) => button.addEventListener('click', () => {
+    const open = button.getAttribute('aria-expanded') !== 'true';
+    buttons.forEach(candidate => candidate.setAttribute('aria-expanded', String(open && candidate === button)));
+    details.hidden = !open;
+    if (open) {
+      const label = skills.spectrum[index].label;
+      details.innerHTML = renderSkillCard({...selectedCategories[label], title: label});
+      details.setAttribute('aria-labelledby', button.id);
+    } else {
+      details.innerHTML = '';
+      details.removeAttribute('aria-labelledby');
+    }
+  }));
 
   setHtml('radarLegend', skills.radar.legend.map(l => `
     <div class="rl"><div class="rl-dot" style="background:${l.color}"></div>${l.label}</div>
