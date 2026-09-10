@@ -3,20 +3,25 @@
   /* 60/30/10 describes visual emphasis, not a fixed pixel quota.
      60: near-black canvas; 30: neutral content surfaces;
      10: blue actions/focus and gold priority highlights.
-     Green is status-only; purple is chart-only. */
+     Green is status-only; slate distinguishes the third chart series. */
   --bg:#030405;
-  --card:#191A1D;
-  --card2:#131416;
+  --card:#191B20;
+  --card2:#13161B;
   --blue:#8CA9CC;
   --blue3:rgba(140,169,204,0.08);
   --yellow:#BFA47D;
   --green:#57C990;
-  --purple:#9983AC;
+  --purple:#98A6B5;
   --orange:#BFA47D;
   --white:#D8D7D4;
-  --gray:#A3A3AB;
+  --gray:#ADB1BA;
   --border:rgba(210,207,201,0.14);
   --border-blue:rgba(140,169,204,0.3);
+  --surface-gradient:linear-gradient(115deg,#111318,#1d1d1c);
+  --surface-edge:linear-gradient(115deg,rgba(140,169,204,.4),rgba(191,164,125,.4));
+  --surface-inset:#0C0F13;
+  --action-gradient:linear-gradient(100deg,#242e40,#6d573b);
+  --border-gold:rgba(191,164,125,.35);
   --font:'Inter',sans-serif;
   --mono:'JetBrains Mono',monospace;
   --radius:20px;
@@ -685,3 +690,51 @@ button.spectrum-card{font-family:inherit;color:inherit;cursor:pointer}
   .side-fab-label{font-size:.75rem}
 }
 @media(prefers-reduced-motion:reduce){.side-fab{transition:none}.side-fab:hover{transform:none}}
+
+/* Shared page palette, anchored to the project cards and Agent Showcase. */
+.spectrum-card,.skill-card,.radar-panel,.hist-card,
+#projects .feat-card,#projects .proj-card,.proj-modal,.side-panel{
+  background:var(--surface-gradient) padding-box,var(--surface-edge) border-box;
+  border-color:transparent;
+}
+.icon-cell,.expand-toggle,.showcase-details,.agent-panel,.agent-teaser{
+  background:var(--surface-inset);border-color:var(--border);
+}
+.icon-cell{background:linear-gradient(115deg,#171b22,#191a1c)}
+.spectrum-card:hover,.spectrum-card[aria-expanded="true"],.expand-toggle:hover{
+  border-color:var(--blue);box-shadow:0 0 18px rgba(140,169,204,.1);
+}
+.spectrum-card[aria-expanded="true"]{background:linear-gradient(115deg,#1d2a39,#242322)}
+.ibadge,.spectrum-icon-badge,.icon-cell-badge,.lang-code{
+  color:var(--blue)!important;background:var(--surface-inset)!important;
+}
+.eyebrow,.pm-section-title{color:var(--blue)}
+.pm-section-title::before{background:var(--blue)}
+.block-title,.career-role{color:var(--gray)}
+.pill,.tag,.tag.b,.pm-tag,.pm-box{color:var(--gray);background:var(--surface-inset);border-color:var(--border)}
+.pm-badge{color:var(--yellow);background:rgba(191,164,125,.08);border-color:var(--border-gold)}
+.btn-fill,.btn-yellow,.side-contact-jump,.side-chat-jump,.showcase-cta,
+#contact .cform .btn-fill,.showcase-banner{
+  background:var(--action-gradient);color:var(--white);border-color:var(--border-gold);
+  box-shadow:0 0 16px rgba(140,169,204,.08),0 0 12px rgba(191,164,125,.06);
+}
+.btn-fill:hover,.btn-yellow:hover,.side-contact-jump:hover,.side-chat-jump:hover{
+  color:#fff;box-shadow:0 0 22px rgba(140,169,204,.16),0 0 16px rgba(191,164,125,.1);
+}
+.btn-ghost,.nav-icon,.pm-close,.side-panel-close{background:var(--surface-inset);color:var(--gray);border-color:var(--border)}
+.btn-ghost:hover,.nav-icon:hover,.pm-close:hover,.side-panel-close:hover{color:var(--white);border-color:var(--blue)}
+.side-tab-btn.active,#projects .proj-tab.active{color:var(--white);background:rgba(140,169,204,.14);border-bottom-color:var(--blue)}
+.hf-embed,.chat-head{background:var(--surface-inset);border-color:var(--border-blue)}
+.chat-head-avatar,.cicon,.side-cicon{color:var(--blue);background:var(--card2);border-color:var(--border-blue)}
+.side-panel-head,.side-panel-tabs,.pm-header{border-color:var(--border)}
+.side-panel-title .ic{color:var(--blue)}
+.showcase-details>summary{color:var(--blue)}
+#contact .fg input,#contact .fg textarea,#contact .cal-widget{
+  background:var(--surface-gradient);color:var(--white);border-color:var(--border);
+}
+#contact .cal-widget{border-color:var(--border-gold)}
+#contact .cal-day.avail{color:var(--blue);background:rgba(140,169,204,.14)}
+#contact .cal-day.today{color:var(--yellow);background:rgba(191,164,125,.12);border-color:var(--border-gold)}
+#contact .cal-day.avail:hover{color:var(--white);background:rgba(140,169,204,.3)}
+#projects .proj-card-desc{color:var(--gray)}
+::selection{background:rgba(140,169,204,.3);color:var(--white)}

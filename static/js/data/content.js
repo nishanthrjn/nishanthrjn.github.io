@@ -147,14 +147,14 @@ export const SKILLS = {
     sets: [
       { values: [80, 55, 65, 75, 70, 55, 70, 60], lineColor: 'rgba(140,169,204,0.9)', fill: 'rgba(140,169,204,0.12)' },
       { values: [35, 90, 35, 45, 45, 65, 85, 80], lineColor: 'rgba(191,164,125,0.9)', fill: 'rgba(191,164,125,0.08)' },
-      { values: [55, 45, 75, 60, 65, 45, 65, 50], lineColor: 'rgba(153,131,172,0.9)', fill: 'rgba(153,131,172,0.1)' },
+      { values: [55, 45, 75, 60, 65, 45, 65, 50], lineColor: 'rgba(152,166,181,0.9)', fill: 'rgba(152,166,181,0.1)' },
     ],
     // Matches the 3 actual radar.sets series 1:1 (this used to list 5
     // categories against 3 series, 2 of which were dead/unmatched).
     legend: [
       { label: 'Current Applied AI Focus', color: '#8CA9CC' },
       { label: 'Established Software Engineering', color: '#BFA47D' },
-      { label: 'Agentic / Experimental Work', color: '#9983AC' },
+      { label: 'Agentic / Experimental Work', color: '#98A6B5' },
     ],
   },
 };

@@ -8,7 +8,7 @@ import { initScrollReveal } from './modules/scrollReveal.js';
 import { handleForm } from './modules/contactForm.js';
 import { renderProfile } from './modules/renderProfile.js?v=20260910-17';
 import { renderProjects } from './modules/renderProjects.js?v=20260910-16';
-import { CONTACT, PROFILE, TIMELINE, SKILLS } from './data/content.js?v=20260910-5';
+import { CONTACT, PROFILE, TIMELINE, SKILLS } from './data/content.js?v=20260910-18';
 import { PROJECTS } from './data/projects.js';
 
 // portfolio.html still wires these up via inline `onclick`/`onsubmit` attributes,
