@@ -1,7 +1,10 @@
+import { loadChatFrames } from './chatEmbeds.js?v=20260910-9';
+
 export function toggleSidePanel(force) {
   const panel = document.getElementById('sidePanel');
   const open = typeof force === 'boolean' ? force : !panel.classList.contains('open');
   panel.classList.toggle('open', open);
+  if (open) loadChatFrames(panel);
   document.getElementById('sideFab').classList.toggle('is-open', open);
 }
 

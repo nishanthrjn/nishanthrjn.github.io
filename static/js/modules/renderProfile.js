@@ -116,12 +116,12 @@ const SKILL_MARKS = {
   'ASP.NET Core': ['dot-net'], '.NET Core / Framework': ['dot-net'],
   'REST APIs': ['api'], 'Blazor': ['blazor'], 'WPF': ['desktop'], 'WinForms': ['windows'],
   'Application Integration': ['workflow'], 'PostgreSQL': ['postgresql'],
-  'SQL Server': ['sqlserver'], 'pgvector': ['vector'], 'FAISS': ['vector'],
+  'SQL Server': ['sqlserver-official'], 'pgvector': ['vector'], 'FAISS': ['vector'],
   'Git': ['git'], 'Docker': ['docker'], 'Jenkins': ['jenkins'], 'AWS exposure': ['aws'],
-  'AutoCAD API': ['cad'], 'SOLIDWORKS API': ['cad'],
+  'AutoCAD API': ['autocad'], 'SOLIDWORKS API': ['solidworks'],
   'LLM Integration': ['brain'], 'Agentic Workflows': ['workflow'],
   'Document Intelligence': ['rag'], 'Vector Search': ['vector'],
-  'DevOps / AWS Exposure': ['aws'], 'CAD / Engineering': ['cad'],
+  'DevOps / AWS Exposure': ['aws'], 'CAD / Engineering': ['autocad','solidworks'],
 };
 function skillIcon(item) {
   const marks = SKILL_MARKS[item.label];
