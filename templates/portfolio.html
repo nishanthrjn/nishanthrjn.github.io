@@ -6,7 +6,7 @@
 <title>Nishanth Rajan — Software Engineer | Backend & Applied AI</title>
 <meta name="description" content="Nishanth Rajan — Software Engineer in Hannover with professional C#/.NET, backend, SQL, CAD/engineering-software experience and current hands-on work in Python, RAG, LLM Orchestration and agentic systems.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/static/css/portfolio.css">
+<link rel="stylesheet" href="/static/css/portfolio.css?v=20260910-5">
 </head>
 <body>
 
@@ -94,13 +94,13 @@
             </g>
             <g fill="currentColor"><circle cx="25" cy="25" r=".4"/><circle cx="74" cy="22" r=".4"/><circle cx="16" cy="42" r=".4"/><circle cx="83" cy="46" r=".4"/><circle cx="24" cy="73" r=".4"/><circle cx="76" cy="72" r=".4"/></g>
           </svg>
-          <ul class="hero-tech-logos" aria-label="Technologies">
+          <ul class="hero-tech-logos" aria-label="Key skills: C# and .NET, backend APIs, SQL, CAD add-ins, Python, and RAG with LLMs">
             <li class="hero-tech-logo hero-tech-python"><img src="/static/icons/python.svg" width="36" height="36" alt=""><span>Python</span></li>
-            <li class="hero-tech-logo hero-tech-csharp"><img src="/static/icons/csharp.svg" width="36" height="36" alt=""><span>C#</span></li>
-            <li class="hero-tech-logo hero-tech-pytorch"><img src="/static/icons/pytorch.svg" width="32" height="32" alt=""><span>PyTorch</span></li>
-            <li class="hero-tech-logo hero-tech-dotnet"><img src="/static/icons/dot-net.svg" width="36" height="36" alt=""><span>.NET</span></li>
-            <li class="hero-tech-logo hero-tech-docker"><img src="/static/icons/docker.svg" width="36" height="36" alt=""><span>Docker</span></li>
-            <li class="hero-tech-logo hero-tech-postgres"><img src="/static/icons/postgresql.svg" width="32" height="32" alt=""><span>PostgreSQL</span></li>
+            <li class="hero-tech-logo hero-tech-csharp"><img src="/static/icons/csharp.svg" width="36" height="36" alt=""><span>C# / .NET</span></li>
+            <li class="hero-tech-logo hero-tech-pytorch"><img src="/static/icons/rag.svg" width="32" height="32" alt=""><span>RAG / LLMs</span></li>
+            <li class="hero-tech-logo hero-tech-dotnet"><img src="/static/icons/api.svg" width="36" height="36" alt=""><span>Backend APIs</span></li>
+            <li class="hero-tech-logo hero-tech-docker"><img src="/static/icons/cad.svg" width="36" height="36" alt=""><span>CAD add-ins</span></li>
+            <li class="hero-tech-logo hero-tech-postgres"><img src="/static/icons/postgresql.svg" width="32" height="32" alt=""><span>SQL</span></li>
           </ul>
         </div>
       </div>
@@ -115,25 +115,25 @@
       <div class="eyebrow">01 · ABOUT</div>
       <div class="p-h2">Detailed Professional Bio</div>
       <div class="about-top">
-        <img class="about-photo" id="aboutPhoto" src="/static/photo.jpeg" alt="Nishanth Rajan">
+        <figure class="about-portrait"><img class="about-photo" id="aboutPhoto" src="/static/photo.jpeg" alt="Nishanth Rajan"><figcaption id="aboutName">Nishanth Rajan</figcaption></figure>
         <p class="about-bio" id="aboutBio"></p>
       </div>
 
-      <div class="about-quickrow" style="margin-top:22px">
-        <div class="edu-list" id="eduRow"></div>
-        <div class="lang-row" id="langRow" style="flex-direction:row;gap:20px"></div>
-      </div>
-
-      <button class="expand-toggle" onclick="toggleExpand(this,'about-more')">
-        <svg class="ic"><use href="#i-chevron"/></svg>
-        <span class="toggle-label">View career timeline &amp; philosophy</span>
-      </button>
-      <div class="expand-body" id="about-more">
-        <div class="block-title" style="margin-top:6px">Career Timeline</div>
-        <div class="timeline" id="timeline"></div>
-
-        <div class="block-title">Philosophy</div>
+      <div class="about-career" id="about-more">
+        <h3 class="about-section-title">Career Timeline</h3>
+        <ol class="career-timeline" id="timeline" aria-label="Career history, most recent first"></ol>
+        <h3 class="about-section-title">Philosophy</h3>
         <p class="about-phil" id="aboutPhil"></p>
+      </div>
+      <div class="about-quickrow">
+        <div>
+          <h3 class="about-section-title">Education</h3>
+          <div class="edu-list" id="eduRow"></div>
+        </div>
+        <div>
+          <h3 class="about-section-title">Languages</h3>
+          <div class="lang-row" id="langRow"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -347,6 +347,6 @@
   </div>
 </div>
 
-<script type="module" src="/static/js/main.js"></script>
+<script type="module" src="/static/js/main.js?v=20260910-5"></script>
 </body>
 </html>

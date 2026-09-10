@@ -61,29 +61,72 @@ function renderAbout(profile, timeline) {
   if (aboutPhoto) aboutPhoto.src = profile.photo;
 
   setText('aboutBio', profile.aboutBio);
+  setText('aboutName', profile.name);
 
   setHtml('eduRow', profile.education.map(edu => `
     <div class="edu-row">
-      <div class="edu-icon">${iconSvg(edu.icon)}</div>
+      <div class="edu-icon"><img src="${edu.logo}" alt="" width="44" height="44"></div>
       <div><div class="edu-name">${edu.name}</div><div class="edu-sub">${edu.sub}</div></div>
     </div>
   `).join(''));
 
   setHtml('langRow', profile.languages.map(lang => `
     <div class="lang-item">
-      <div class="lang-code" style="background:${lang.bg};color:${lang.color}">${lang.code}</div>
+      <img class="language-flag" src="/static/icons/flag-${lang.code.toLowerCase()}.svg" width="32" height="24" alt="">
       <div><div class="lang-name">${lang.name}</div><div class="lang-level">${lang.level}</div></div>
     </div>
   `).join(''));
 
-  setHtml('timeline', timeline.map((entry, i) => `
-    <div class="t-row">
-      <div class="t-dotcol"><div class="t-mark"></div>${i < timeline.length - 1 ? '<div class="t-line"></div>' : ''}</div>
-      <div><div class="t-co">${entry.company}</div><div class="t-period">${entry.period}</div><div class="t-role">${entry.role}</div><div class="t-desc">${entry.desc}</div></div>
-    </div>
+  const careerIcons = {
+    'Current': 'i-llm',
+    'Professional Development': 'i-grad',
+    'Kauschke': 'i-cube',
+    'Relocation & MSc Studies': 'i-grad',
+    'Greenway Health': 'i-hospital',
+    'FourNxt': 'i-agent',
+    'Smartdale': 'i-cloud',
+    'IDSi': 'i-cad',
+    'Personal Development': 'i-grad',
+    'Seven Seas': 'i-hotel',
+    'Visionics': 'i-cube',
+    'iSET': 'i-grid',
+  };
+  setHtml('timeline', timeline.map(entry => `
+    <li class="career-item">
+      <span class="career-node" aria-hidden="true"></span>
+      <div class="career-entry">
+        <span class="career-emblem" aria-hidden="true">${iconSvg(careerIcons[entry.company] || 'i-user')}</span>
+        <h4 class="career-company">${entry.company}</h4>
+        <div class="career-period">${entry.period}</div>
+        <div class="career-role">${entry.role}</div>
+        <p class="career-description">${entry.desc}</p>
+      </div>
+    </li>
   `).join(''));
 
   setText('aboutPhil', profile.philosophy);
+}
+
+const SKILL_MARKS = {
+  'Python': ['python'], 'C# / .NET': ['csharp','dot-net'],
+  'FastAPI': ['fastapi'], 'LangChain': ['langchain'],
+  'Semantic Kernel / Microsoft Agent Framework (MAF)': ['microsoft'],
+  'RAG': ['rag'], 'Vector Retrieval': ['vector'], 'Groq / Llama': ['groq','meta'],
+  'NegMAS': ['negotiation'], 'PyTorch / DL': ['pytorch'],
+  'ASP.NET Core': ['dot-net'], '.NET Core / Framework': ['dot-net'],
+  'REST APIs': ['api'], 'Blazor': ['blazor'], 'WPF': ['desktop'], 'WinForms': ['windows'],
+  'Application Integration': ['workflow'], 'PostgreSQL': ['postgresql'],
+  'SQL Server': ['sqlserver'], 'pgvector': ['vector'], 'FAISS': ['vector'],
+  'Git': ['git'], 'Docker': ['docker'], 'Jenkins': ['jenkins'], 'AWS exposure': ['aws'],
+  'AutoCAD API': ['cad'], 'SOLIDWORKS API': ['cad'],
+  'LLM Integration': ['brain'], 'Agentic Workflows': ['workflow'],
+  'Document Intelligence': ['rag'], 'Vector Search': ['vector'],
+  'DevOps / AWS Exposure': ['aws'], 'CAD / Engineering': ['cad'],
+};
+function skillIcon(item) {
+  const marks = SKILL_MARKS[item.label];
+  if (!marks) return iconSvg(item.icon);
+  return marks.map(mark => `<img class="ic skill-mark${['langchain','groq','meta'].includes(mark) ? ' monochrome-mark' : ''}" src="/static/icons/${mark}.svg" alt="" width="32" height="32">`).join('');
 }
 
 function renderSkillCard(card) {
@@ -93,9 +136,9 @@ function renderSkillCard(card) {
   } else if (card.kind === 'tags') {
     body = `<div class="tag-row">${card.tags.map(t => `<span class="tag${t.variant ? ' ' + t.variant : ''}">${t.text}</span>`).join('')}</div>`;
   } else {
-    const style = card.cols ? ` style="grid-template-columns:repeat(${card.cols},1fr)"` : '';
+    const style = card.cols === 2 ? ' style="--skill-min:140px"' : '';
     body = `<div class="icon-grid"${style}>${card.items.map(item => `
-      <div class="icon-cell"><div class="icon-cell-badge" style="background:${item.bg};color:${item.color}">${iconSvg(item.icon)}</div>${item.label}</div>
+      <div class="icon-cell"><div class="icon-cell-badge" style="background:${item.bg};color:${item.color}">${skillIcon(item)}</div><span class="skill-label">${item.label}</span></div>
     `).join('')}</div>`;
   }
   return `<div class="skill-card${card.wide ? ' wide' : ''}"><div class="skill-card-title">${card.title}</div>${body}</div>`;
@@ -103,7 +146,7 @@ function renderSkillCard(card) {
 
 function renderSkills(skills) {
   setHtml('spectrumGrid', skills.spectrum.map(s => `
-    <div class="spectrum-card"><div class="spectrum-icon-badge" style="background:${s.bg};color:${s.color}">${iconSvg(s.icon)}</div><div class="spectrum-label">${s.label}</div></div>
+    <div class="spectrum-card"><div class="spectrum-icon-badge" style="background:${s.bg};color:${s.color}">${skillIcon(s)}</div><div class="spectrum-label">${s.label}</div></div>
   `).join(''));
 
   setHtml('skillsGrid', skills.cards.map(renderSkillCard).join(''));

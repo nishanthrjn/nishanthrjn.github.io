@@ -41,8 +41,8 @@ export const PROFILE = {
 
   aboutBio: "Software engineer with more than a decade of professional experience across backend systems, desktop applications, CAD-integrated engineering software, SQL-backed workflows, application integration, modernization, debugging, and production support. Most of my commercial experience is in C#/.NET and SQL. More recently, I have been extending this foundation into Python and applied AI through structured study, personal projects, and competition work involving FastAPI, RAG, LLM integration, vector retrieval, Microsoft Semantic Kernel / Microsoft Agent Framework (MAF), LangChain, and agentic systems. Agent-Nexus, my Python/NegMAS automated-negotiation project, placed 4th in the ANAC 2026 competition.",
   education: [
-    { icon: 'i-grad', name: 'Leibniz Universität Hannover', sub: 'MSc Studies in Geodesy & Geoinformatics · without degree' },
-    { icon: 'i-grad', name: 'Mahatma Gandhi University, Kerala, India', sub: 'B.Tech in Electronics & Communication Engineering · 2003–2007' },
+    { icon: 'i-grad', name: 'Leibniz Universität Hannover', logo: '/static/icons/luh.png', sub: 'MSc Studies in Geodesy & Geoinformatics · without degree' },
+    { icon: 'i-grad', name: 'Mahatma Gandhi University, Kerala, India', logo: '/static/icons/mgu.png', sub: 'B.Tech in Electronics & Communication Engineering · 2003–2007' },
   ],
   languages: [
     { code: 'EN', name: 'English', level: 'C1 — Advanced', bg: 'rgba(37,99,235,0.14)', color: '#60a5fa' },
