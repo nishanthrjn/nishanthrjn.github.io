@@ -5,7 +5,7 @@ const ART = {
 };
 
 function featuredCard(project) {
-  return `<button type="button" class="feat-card" data-project="${project.id}" aria-label="View ${project.title} project details">
+  return `<button type="button" class="feat-card" data-project="${project.id}" aria-haspopup="dialog" aria-controls="modalBox" aria-label="View ${project.title} project details">
     <span class="feat-visual"><img src="/static/images/projects/${project.id}.svg" width="720" height="360" loading="lazy" alt="${project.title} architecture diagram"></span>
     <span class="feat-copy"><span class="project-kicker">${project.numLabel}</span>
       <span class="feat-title">${project.title}</span>
@@ -16,12 +16,14 @@ function featuredCard(project) {
 }
 
 function galleryCard(project) {
-  return `<button type="button" class="proj-card" data-project="${project.id}" data-category="${project.category}" aria-label="View ${project.title} project details">
-    <span class="project-art art-${ART[project.id] || 'enterprise'}" aria-hidden="true"></span>
+  return `<button type="button" class="proj-card" data-project="${project.id}" data-category="${project.category}" aria-haspopup="dialog" aria-controls="modalBox" aria-label="View ${project.title} project details">
+    <span class="project-thumbnail">${project.featured
+      ? `<img src="/static/images/projects/${project.id}.svg" width="720" height="360" loading="lazy" alt="">`
+      : `<span class="project-art art-${ART[project.id] || 'enterprise'}" aria-hidden="true"></span>`}</span>
     <span class="proj-card-copy"><span class="project-kicker">${project.historical ? 'CAREER PROJECT' : project.numLabel}</span>
       <span class="proj-card-title">${project.title}</span>
       <span class="proj-card-desc">${project.cardDesc}</span>
-      <span class="proj-card-stack">${project.tags.map(tag => tag.text).join(' · ')}</span>
+      <span class="proj-card-stack">${project.tags.slice(0, 3).map(tag => tag.text).join(' · ')}</span>
       <span class="feat-link">[ DETAILS <span aria-hidden="true">↗</span> ]</span>
     </span>
   </button>`;
