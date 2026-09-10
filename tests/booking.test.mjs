@@ -77,3 +77,11 @@ test('inline personal wording survives date, time and duration updates', () => {
   assert(draft.includes('Friday, 11 September 2026, with my engineering team.'));
   assert(!draft.includes('15:00'));
 });
+
+test('half-hour starts validate and appear in the editable draft', () => {
+  assert(isBookableTime(selection.requestedDate, '09:30', now));
+  assert(isBookableTime(selection.requestedDate, '14:30', now));
+  assert(!isBookableTime(selection.requestedDate, '09:30', new Date('2026-09-10T08:00:00Z')));
+  const draft = createDraftUpdater()('', { ...selection, requestedTime: '14:30' }, 'Alice');
+  assert(draft.includes('at 14:30 (Europe/Berlin) for 30 minutes.'));
+});

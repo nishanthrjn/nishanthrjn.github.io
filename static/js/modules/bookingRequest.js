@@ -1,4 +1,4 @@
-import { BOOKING } from '../data/booking.js?v=20260910-20';
+import { BOOKING } from '../data/booking.js?v=20260910-21';
 
 export function zonedNow(now = new Date()) {
   const parts = Object.fromEntries(new Intl.DateTimeFormat('en-GB', {

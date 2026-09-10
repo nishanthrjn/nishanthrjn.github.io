@@ -21,6 +21,10 @@ const url = process.env.PORTFOLIO_TEST_URL || 'http://127.0.0.1:8767';
       if (mode === 'timeout') { await new Promise(resolve => setTimeout(resolve, 1800)); return route.abort().catch(() => {}); }
       return route.fulfill({ status: mode === 'error' ? 422 : 200, contentType: 'application/json', body: JSON.stringify(mode === 'error' ? { errors: [{ message: 'Test rejection' }] } : { ok: true }) });
     });
+    const fixtureConfig = fs.readFileSync(path.join(root, 'static/js/data/booking.js'), 'utf8');
+    await page.route('**/static/js/data/booking.js*', route => route.fulfill({
+      contentType: 'application/javascript', body: fixtureConfig.replace(/formspreeEndpoint: '[^']*'/, "formspreeEndpoint: 'https://formspree.io/f/YOUR_FORM_ID'"),
+    }));
     await page.goto(url, { waitUntil: 'networkidle' });
     const submit = () => page.locator('#contactForm button[type="submit"]').click();
     const status = () => page.locator('#contactFormStatus').textContent();
@@ -49,6 +53,11 @@ const url = process.env.PORTFOLIO_TEST_URL || 'http://127.0.0.1:8767';
     await page.locator('#bookingTime').selectOption('14:00');
     await submit(); assert.match(await status(), /select a duration/);
     await page.locator('#bookingDuration').selectOption('30');
+    assert.equal(await page.locator('#bookingTime').getAttribute('size'), '4');
+    assert(await page.locator('#bookingTime').evaluate(e => e.scrollHeight > e.clientHeight));
+    await page.locator('#bookingTime').selectOption('14:30');
+    assert.match(await page.locator('#contactMessage').inputValue(), /at 14:30/);
+    await page.locator('#bookingTime').selectOption('14:00');
     const generated = await page.locator('#contactMessage').inputValue();
     assert.match(generated, /Friday, 11 September 2026 at 14:00 \(Europe\/Berlin\) for 30 minutes/);
     await page.locator('#contactMessage').fill(generated + '\n\nAgenda: discuss CAD workflows.');
@@ -74,7 +83,7 @@ const url = process.env.PORTFOLIO_TEST_URL || 'http://127.0.0.1:8767';
 
     // Public endpoint injected only into the test response, never the repository.
     await page.route('**/static/js/data/booking.js*', route => route.fulfill({
-      contentType: 'application/javascript', body: fs.readFileSync(path.join(root, 'static/js/data/booking.js'), 'utf8').replace('YOUR_FORM_ID', 'testfixture').replace('20000', '1500'),
+      contentType: 'application/javascript', body: fixtureConfig.replace(/formspreeEndpoint: '[^']*'/, "formspreeEndpoint: 'https://formspree.io/f/testfixture'").replace('20000', '1500'),
     }));
     await page.reload({ waitUntil: 'networkidle' });
     await fill(); await choose();

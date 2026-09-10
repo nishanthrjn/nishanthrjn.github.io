@@ -1,5 +1,5 @@
-import { BOOKING } from '../data/booking.js?v=20260910-20';
-import { createDraftUpdater, dateFromKey, formatBookingDate, isBookableDate, isBookableTime, zonedNow } from './bookingRequest.js?v=20260910-20';
+import { BOOKING } from '../data/booking.js?v=20260910-21';
+import { createDraftUpdater, dateFromKey, formatBookingDate, isBookableDate, isBookableTime, zonedNow } from './bookingRequest.js?v=20260910-21';
 
 const WEEKDAY_LABELS = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 let selection = { requestedDate: '', requestedTime: '', duration: '', timezone: BOOKING.timezone };
@@ -28,7 +28,7 @@ export function initBookingCalendar() {
   controls.className = 'booking-controls';
   controls.id = 'bookingControls';
   controls.innerHTML = `<p class="booking-date" id="bookingDateLabel"></p>
-    <label for="bookingTime">Select time<select id="bookingTime" name="requestedTime" form="contactForm" required aria-describedby="bookingTimezone"></select></label>
+    <label for="bookingTime">Select time<select id="bookingTime" size="4" name="requestedTime" form="contactForm" required aria-describedby="bookingTimezone"></select></label>
     <label for="bookingDuration">Duration<select id="bookingDuration" name="duration" form="contactForm" required><option value="">Select duration</option></select></label>
     <p class="booking-timezone" id="bookingTimezone"></p>`;
   const timeSelect = controls.querySelector('#bookingTime');

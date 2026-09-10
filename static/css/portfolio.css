@@ -754,3 +754,6 @@ button.spectrum-card{font-family:inherit;color:inherit;cursor:pointer}
 .contact-form-status[data-state="success"]{color:var(--blue)}
 #contact [aria-invalid="true"]{outline:1px solid var(--yellow);outline-offset:2px}
 #contact .cform button:disabled,#contact .booking-controls select:disabled{cursor:wait}
+
+.booking-controls select[size]{max-height:8rem;overflow-y:auto}
+.booking-controls select[size] option{padding:6px}

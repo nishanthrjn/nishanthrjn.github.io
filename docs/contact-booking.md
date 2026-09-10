@@ -15,7 +15,7 @@ The request submits `name`, `email`, `requestedDate` (YYYY-MM-DD), `requestedTim
 
 ## Defaults and editing behavior
 
-All settings live in `static/js/data/booking.js`: Europe/Berlin, 09:00 / 10:00 / 11:00 / 14:00 / 15:00 / 16:00, durations 15 / 30 / 45 / 60 minutes, and a 20-second request timeout. No time or duration is preselected. Dates remain current-month, non-past weekdays; the calendar uses Berlin's date even for visitors abroad. Elapsed times today cannot be submitted. Server-side Formspree spam and validation settings remain necessary because client-side validation can be bypassed.
+All settings live in `static/js/data/booking.js`: Europe/Berlin, half-hour start times from 09:00–11:30 and 14:00–16:30, durations 15 / 30 / 45 / 60 minutes, and a 20-second request timeout. The time selector is a compact, scrollable native list with keyboard support. No time or duration is preselected. Dates remain current-month, non-past weekdays; the calendar uses Berlin's date even for visitors abroad. Elapsed times today cannot be submitted. Server-side Formspree spam and validation settings remain necessary because client-side validation can be bypassed.
 
 Selecting another date moves the controls below that week row and resets time and duration. The draft updates only its generated scheduling sentence and unedited signature, preserving visitor notes and custom greetings/signatures. If the visitor rewrites the generated sentence entirely, the next booking change prepends a fresh scheduling summary while retaining the rewritten message. Requests are frozen while sending, retained after errors, and identical successful requests cannot be resubmitted in the same page session.
 
