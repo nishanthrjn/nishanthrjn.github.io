@@ -5,7 +5,10 @@ export function toggleSidePanel(force) {
   const open = typeof force === 'boolean' ? force : !panel.classList.contains('open');
   panel.classList.toggle('open', open);
   if (open) loadChatFrames(panel);
-  document.getElementById('sideFab').classList.toggle('is-open', open);
+  const trigger = document.getElementById('sideFab');
+  trigger.classList.toggle('is-open', open);
+  trigger.setAttribute('aria-expanded', String(open));
+  trigger.setAttribute('aria-label', open ? 'Close Agent Chat' : 'Open Agent Chat');
 }
 
 export function switchSideTab(tab, event) {

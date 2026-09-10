@@ -190,14 +190,14 @@ function renderSkills(skills) {
 
 function renderContact(contact) {
   setHtml('contactInfoList', `
-    <div class="cdetail"><div class="cicon">${iconSvg('i-mail')}</div><div><div class="clabel">Email</div><div class="cval">${contact.email}</div></div></div>
-    <div class="cdetail"><div class="cicon">${iconSvg('i-phone')}</div><div><div class="clabel">Phone</div><div class="cval">${contact.phone}</div></div></div>
+    <div class="cdetail"><div class="cicon">${iconSvg('i-mail')}</div><div><div class="clabel">Email</div><div class="cval"><a href="mailto:${contact.email}">${contact.email}</a></div></div></div>
+    <div class="cdetail"><div class="cicon">${iconSvg('i-phone')}</div><div><div class="clabel">Phone</div><div class="cval"><a href="${contact.phoneHref}">${contact.phone}</a></div></div></div>
     <div class="cdetail"><div class="cicon">${iconSvg('i-location')}</div><div><div class="clabel">Location</div><div class="cval">${contact.locationDetail}</div></div></div>
   `);
 
   setHtml('socialList', `
-    <a href="${contact.linkedinUrl}" target="_blank">${iconSvg('i-linkedin')}${contact.linkedinHandle}</a>
-    <a href="${contact.githubUrl}" target="_blank">${iconSvg('i-github')}${contact.githubHandle}</a>
+    <a href="${contact.linkedinUrl}" target="_blank">${iconSvg('i-linkedin')}LinkedIn</a>
+    <a href="${contact.githubUrl}" target="_blank">${iconSvg('i-github')}GitHub</a>
     <a href="${contact.cvUrl}" download>${iconSvg('i-download')}Download CV</a>
   `);
 
