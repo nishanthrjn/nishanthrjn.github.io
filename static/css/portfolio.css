@@ -84,8 +84,7 @@ nav{
 .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:28px;align-items:center}
 .hero-status{
   display:inline-flex;align-items:center;gap:8px;font-size:0.63rem;font-weight:600;letter-spacing:0.09em;
-  /* color:var(--yellow);background:rgba(191,164,125,0.07);border:1px solid rgba(191,164,125,0.18); */
-  color:var(--green);background:rgba(141,169,148,0.05);border:1px solid rgba(141,169,148,0.2);
+  color:var(--blue);background:var(--blue3);border:1px solid var(--border-blue);
   border-radius:20px;padding:5px 14px;margin-bottom:24px;
 }
 .hero-status-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:blink 2s infinite}
@@ -430,7 +429,7 @@ footer{padding:26px 32px;border-top:1px solid var(--border);display:flex;justify
 .panel::before,.agent-panel::before{display:none}
 .eyebrow,.block-title,.career-role,.pm-section-title{color:var(--gray)}
 .block-title::before,.pm-section-title::before{background:var(--gray)}
-.hero-status{color:var(--green);background:rgba(87,201,144,.07);border-color:rgba(87,201,144,.3)}
+.hero-status{color:var(--blue);background:var(--blue3);border-color:var(--border-blue)}
 .pill,.tag.b,.pm-tag,.pm-badge,.pm-box{color:var(--gray);background:var(--card2);border-color:var(--border)}
 .spectrum-card,.skill-card,.feat-card,.proj-card,.hist-card,.radar-panel{
   background:linear-gradient(135deg,var(--card),var(--card2));
